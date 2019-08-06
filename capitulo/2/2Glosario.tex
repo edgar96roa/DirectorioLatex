@@ -1,0 +1,114 @@
+%=========================={Glosario}===========================
+% En esta parte se pretende introducir los conceptos del negocio
+%---------------------------------------------------------------
+
+\chapter{Glosario}
+\label{cap:Glosario}
+
+\section{Definiciones}
+
+\subsection*{Administrador}
+\hypertarget{Glo:Administrador}
+Es la persona o personas encargadas de realizar la alta, actualización o eliminación de la información de los distintos \hyperlink{Glo:Empleado}{Empleados}.
+
+\subsection*{Consultor}
+\hypertarget{Glo:Consultor}
+Se define como la persona que realizará búsquedas dentro del \hyperlink{Glo:Directorio}{Directorio}.
+
+\subsection*{CRUD}
+\hypertarget{Glo:CRUD}
+Es un acrónimo que se refiere a la acción de realizar altas, bajas y cambios en los datos que necesiten ocupar los \hyperlink{Glo:Empleado}{Empleados}, en este caso el término CRUD será usado para referirse a la interfaz gráfica de realizar altas, bajas y cambios que el \hyperlink{Glo:Editor}{Editor} con acceso al sistema requiera realizar a los datos.
+
+\subsection*{Directorio}
+\hypertarget{Glo:Directorio}
+Es el almacén donde estará ubicada la información de los distintos \hyperlink{Glo:Empleado}{Empleados} dentro del \hyperlink{Glo:IMSS}{IMSS}.
+
+\subsection*{Delegación}
+\hypertarget{Glo:Delegación}
+Se refiere a las Unidades Médicas de nivel 1 y 2 dentro del \hyperlink{Glo:IMSS}{IMSS}.
+
+\subsection*{Editor}
+\hypertarget{Glo:Editor}
+Es la persona encargada de realizar únicamente la labor de actualización de la información de los distintos \hyperlink{Glo:Empleado}{Empleados}.
+
+\subsection*{Empleado}
+\hypertarget{Glo:Empleado}
+Es la \hyperlink{Glo:PerFi}{Persona física} que labora dentro de las instalaciones del \hyperlink{Glo:IMSS}{IMSS} y que utiliza el sistema.
+
+\subsection*{Identificador de usuario}
+\hypertarget{Glo:Identificador de usuario}
+Es aquella cadena de caracteres alfanuméricos que identifican de manera única a la cuenta del \hyperlink{Usuario}. 
+
+\subsection*{IMSS}
+\hypertarget{Glo:IMSS}
+El Instituto Mexicano del Seguro Social o por sus siglas: IMSS. Es una Institución del gobierno federal, autónoma y tripartita.
+
+\subsection*{UMAE}
+\hypertarget{Glo:UMAE}
+Es un acrónimo que se refiere a las Unidades Médicas de Alta Especialidad, el término UMAE se utilizará para para las Unidades Médicas de nivel 3.
+
+\subsection*{Usuario}
+\hypertarget{Glo:Usuario}
+Un usuario son todos aquellos que interactúan con el sistema y cuentan con sus credenciales de acceso, que son su \hyperlink{Identificador de usuario} y su contraseña. Por cuestiones de seguridad, a cada usuario le corresponde una cuenta de usuario.
+
+\newpage
+
+\section{Definición de usuarios del sistema}
+
+A continuación, se describen la importancia de los usuarios definidos en el glosario anterior, especificando sus responsabilidades entre ellos mismos y con el sistema al mismo tiempo que definimos su participación en distintos procesos.
+
+\begin{Usuario}{\subsection{Administrador}}{
+\hypertarget{UsrDef:Administrador}
+	El administrador es el encargado de dar de alta, modificar o eliminar la información de los empleados para que los consultores al momento de necesitar la información se encuentre de manera correcta.\\
+}
+    \item[Responsabilidades:] \cdtEmpty
+    \begin{itemize}
+		\item Solicitar la información de los empleados dentro de las \hyperlink{Glo:Delegacion}{Delegaciones} y \hyperlink{Glo:UMAE}{UMAES} del \hyperlink{Glo:IMSS}{IMSS}.
+		\item Dar de alta la información de los empleados dentro de las \hyperlink{Glo:Delegacion}{Delegaciones} y \hyperlink{Glo:UMAE}{UMAES} del \hyperlink{Glo:IMSS}{IMSS}.
+    \end{itemize}
+
+	\item[Procesos en los que participa:] \cdtEmpty
+    \begin{itemize}
+		\item Recabar información de los empleados.
+		\item Modificar información de los empleados.
+		\item Eliminar información de los empleados.
+    \end{itemize}
+\end{Usuario}
+
+\begin{Usuario}{\subsection{Consultor}}{
+\hypertarget{UsrDef:Consultor}
+	El consultor es el encargado de visualizar la información de los empleados para posteriormente ponerse en contacto con ello s por algún otro medio de comunicación.\\
+}
+    \item[Responsabilidades:] \cdtEmpty
+    \begin{itemize}
+		\item Solicitar la modificación de la información de los empleados cuando es errónea.
+		\item Consultar la información de los empleados de las distintas \hyperlink{Glo:Delegacion}{Delegaciones} y \hyperlink{Glo:UMAE}{UMAES} dentro del \hyperlink{Glo:IMSS}{IMSS}.
+    \end{itemize}
+
+	\item[Procesos en los que participa:] \cdtEmpty
+    \begin{itemize}
+		\item Recabar información a modificar de los empleados.
+		\item Contactar al administrador o editor para pedirles la modificación de información de los empleados.
+		\item Eliminar información de los empleados.
+    \end{itemize}
+\end{Usuario}
+
+\begin{Usuario}{\subsection{Editor}}{
+\hypertarget{UsrDef:Editor}
+	El editor es el encargado de modificar o eliminar la información de los empleados para que los consultores al momento de necesitar la información se encuentre de manera correcta.\\
+}
+    \item[Responsabilidades:] \cdtEmpty
+    \begin{itemize}
+		\item Solicitar la información de los empleados dentro de las \hyperlink{Glo:Delegacion}{Delegaciones} y \hyperlink{Glo:UMAE}{UMAES} del \hyperlink{Glo:IMSS}{IMSS}.
+		\item Dar de alta la información de los empleados dentro de las \hyperlink{Glo:Delegacion}{Delegaciones} y \hyperlink{Glo:UMAE}{UMAES} del \hyperlink{Glo:IMSS}{IMSS}.
+		\item Eliminar la información de los empleados en caso de que sea requerido.
+    \end{itemize}
+
+	\item[Procesos en los que participa:] \cdtEmpty
+    \begin{itemize}
+        \item Recibir una notificación  o correo por parte del consultor para la solicitar la modificación de información de algún empleado.
+		\item Recabar información a modificar de los empleados.
+		\item Modificar información de los empleados.
+		\item Eliminar información de los empleados.
+    \end{itemize}
+\end{Usuario}

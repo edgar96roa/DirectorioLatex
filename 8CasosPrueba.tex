@@ -1,0 +1,1058 @@
+%=========================================================
+\chapter{Casos de Prueba}
+\label{cap:CasosDePrueba}
+\section{Introducción}
+Este capítulo describe el guión de pruebas para el sistema. En el se detallan los escenarios de ejecución del sistema.
+\section{Plan de pruebas}
+Este documento tiene como finalidad entregar los pasos a seguir para la aplicación correcta de las estrategias y pruebas necesarias en el sistema presente. Con el fin de verificar las funciones y procesos de los distintos módulos del software así como también encontrar los posibles fallos o errores que se presenten durante el periodo de pruebas.
+Además validar si el sistema cumple con los requerimientos que contemplen el funcionamiento total del mismo.
+\subsection{Objetivos de pruebas}
+\begin{itemize}
+    \item Verificar el cumplimiento alcanzado de los requerimientos funcionales de software, según lo estipulado.
+    \item Analizar y validar con usuarios finales la funcionalidad y los siguientes atributos de calidad del software: seguridad,desempeño y usabilidad.
+\end{itemize}
+%\subsection{Alcance de pruebas}
+\subsection{Guiones de pruebas}
+\textbf{Nota:} Todo atributo no especificado en la preparación de los guiones de pruebas es indistinto para la ejecución de sus casos de prueba y pueden contener cualquier valor.
+\clearpage
+%%%%%%%%%% REGISTRO DE CLIENTE %%%%%%%%%%%%%%%%%%%%%
+\subsection{Guión de Pruebas GU01}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{5cm}| p{13cm} |} \hline
+\multicolumn{2}{|c|}{\textbf{Datos}} \\ \hline
+    \textbf{ID:}&GU01\\ \hline
+    \textbf{Autor:}&Nelly Geraldine Robles Rodríguez\\ \hline
+    \textbf{Alcance:}&Registro de un cliente en sistema. \hyperlink{CU:CU16}{CU-16}\\ \hline
+    \textbf {Versión:}&0.2 \\ \hline
+    %\textbf {Propiedades:}
+    %\textbf {Nivel:}
+    %\textbf {Tipo:}
+    \textbf{Preparación:}&Que un cliente desee obtener un usuario y contraseña.\\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Caso de prueba GU01-CP1}
+\textbf{ID:} GU01-CP1\\
+\textbf{Nombre:} Caso correcto de cliente del tipo persona Moral.\\
+\textbf{Entradas:}\\
+Cliente 1( Cliente del tipo de persona \textit{Moral})
+\begin{itemize}
+    \item Tipo de Cliente: Moral
+    \item RFC: AMD891005M19
+    \item Nombre o Razón Social: Asociación Mexicana de Distribuidores de Automotores, A.C.
+    \item Apellido Paterno: (Vacío)
+    \item Apellido Materno: (Vacío)
+    \item Correo electrónico: amda@amda.mx
+    \item Teléfono: 36883650
+    \item Password: 1234
+    \item Domicilio: Guillermo Gónzalez
+    \item C.P. : 01210
+    \item Colonia: Centro Ciudad Santa Fé
+    \item Delegación: Alváro Obregón
+    \item Estado: CDMX\\
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+\item cargar la pantalla \textbf{IU-REG}
+    \item Ingresa datos del cliente 1.
+    \item Selecciona el botón Registrar.
+\end{itemize}
+\textbf{Salida:}
+Muestra mensaje en pantalla " Bienvenido".
+El cliente recibe un correo de confirmación de registro. 
+
+\subsubsection{Caso de prueba GU01-CP2}
+\textbf{ID:} GU01-CP2\\
+\textbf{Nombre:} Caso correcto de cliente del tipo persona Física.\\
+\textbf{Entradas:} 
+Cliente 2( Cliente del tipo de persona \textit{Física})
+\begin{itemize}
+    \item Tipo de Cliente: Física
+    \item RFC: RORN910924675
+    \item Nombre o Razón Social: Nelly Geraldine 
+    \item Apellido Paterno: Robles
+    \item Apellido Materno: Rodriguez
+    \item Correo electrónico: nroblesr@amda.mx
+    \item Teléfono: 57042846
+    \item Password: Gera12345
+    \item Domicilio: Plaza del Estudiante
+    \item C.P. : 06020
+    \item Colonia: Centro 
+    \item Delegación: Cuauhtemoc
+    \item Estado: CDMX\\
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+\item cargar la pantalla \textbf{IU-REG}
+    \item Ingresa datos del cliente 2.
+    \item Selecciona el botón Registrar.
+\end{itemize}
+\textbf{Salida:}
+El cliente recibe un correo de confirmación de registro. 
+
+\subsubsection{Caso de prueba GU01-CP3}
+\textbf{ID:} GU01-CP3\\
+\textbf{Nombre:} Caso con RFC incorrecto de tipo de persona.\\
+\textbf{Entradas:} 
+Cliente 3( Cliente del tipo de persona \textit{Moral} con RFC del tipo persona Física.)
+\begin{itemize}
+    \item Tipo de Cliente: Moral
+    \item RFC: RORN880319678
+    \item Nombre o Razón Social: Asociación Mexicana de Dstribuidores de Automotores, A.C.
+    \item Apellido Paterno: (vacío)
+    \item Apellido Materno: (vacío)
+    \item Correo electrónico: nroblesr@amda.mx
+    \item Teléfono: 57042846
+    \item Password: Gera12345
+    \item Domicilio: Gonzalez Contreras
+    \item C.P. : 01210
+    \item Colonia: Centro Ciudad Santa Fé
+    \item Delegación: Álvaro Obregon
+    \item Estado: CDMX\\
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+\item cargar la pantalla \textbf{IU-REG}
+    \item Ingresa datos del cliente 3.
+    \item Selecciona el botón Registrar.
+\end{itemize}
+\textbf{Salida:}
+Mensaje en pantalla "El RFC no coincide con el Tipo de Persona seleccionado"
+\clearpage
+
+\subsubsection{Caso de prueba GU01-CP4}
+\textbf{ID:} GU01-CP4\\
+\textbf{Nombre:} Caso de cliente ingresando correo electrónico repetido.\\
+\textbf{Entradas:}
+Cliente 4( Cliente registrado con correo electrónico repetido.)
+\begin{itemize}
+    \item Tipo de Cliente: Fisica
+    \item RFC: RORN910924675
+    \item Nombre o Razón Social: Nelly GeraldinE
+    \item Apellido Paterno: Robles
+    \item Apellido Materno: Rodriguez
+    \item Correo electrónico: nroblesr@amda.mx
+    \item Teléfono: 57042846
+    \item Password: Gera12345
+    \item Domicilio: Plaza del Estudiante
+    \item C.P. : 06020
+    \item Colonia: Centro 
+    \item Delegación: Cuauhtémoc
+    \item Estado: CDMX
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+\item cargar la pantalla \textbf{IU-REG}
+    \item Ingresa datos del cliente 4.
+    \item Selecciona el botón Registrar.
+\end{itemize}
+\textbf{Salida:}
+Mensaje en pantalla "El correo electrónico ya fue registrado."
+\clearpage
+
+%%%%%%%% DAR DE ALTA ESPECTACULAR %%%%%%%%%%
+\subsection{Guión de pruebas GU02}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{| p{5cm}| p{13cm} |} \hline
+\multicolumn{2}{|c|}{\textbf{Datos}} \\ \hline
+\textbf{ID:}&GU02\\ \hline
+\textbf{Autor:}&Montiel Guerrero Christian Omar\\ \hline
+\textbf{Alcance:}&Dar de alta un espectacular \hyperlink{CU:CU02}{CU-02}\\ \hline
+ \textbf {Versión:}&1.0 \\ \hline
+\textbf{Preparación:}& Que existan nuevos espectaculares adquiridos por parte de la empresa.\\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Caso de prueba G02-CP1}
+\textbf{ID:} G02-CP1\\
+\textbf{Nombre:} Caso correcto de alta de espectaculares.\\
+\textbf{Entradas:}
+Espectacular(1). 
+\begin{itemize}
+    \item IdEspectacular: E04
+    \item Tipo de Espectacular: Iluminado
+    \item Vía: Primaria
+    \item Precio: 15,000
+    \item imagen: anuncio02.png
+    \item largo: 9 metros
+    \item ancho: 7 metros
+    \item impacto en personas:100,000
+    \textbf{Información del Arrendador}
+    \item Nombre del contacto: Luis Ramírez Rivero
+    \item Teléfono: 26894848
+    \item Dirección arrendador: Mercaderes No. 134
+    \item RFC Arrendador: RARL880519J89
+    \item Correo electrónico:ram@live.com.mx
+    \textbf{Dirección del Espectacular}
+    \item Dirección: Sagredo No. 489
+    \item Colonia: San Jose Insurgentes
+    \item Delegación - Municipio: Benito Juarez
+\end{itemize}
+
+\textbf{Pasos:}
+\begin{itemize}
+    \item Cargar la pantalla \textbf{IU-GI-AE}
+    \item Ingresa los datos del espectacular no. 1
+    \item Selecciona la opción de ``Aceptar''.
+\end{itemize}
+\textbf{Salida:}
+Mensaje en pantalla: ``Operación exitosa''.
+    
+    
+\subsubsection{Caso de prueba G02-CP2}
+\textbf{ID:} G02-CP2\\
+\textbf{Nombre:} Ancho, Largo e impacto en personas con valores negativos.\\
+\textbf{Entradas:}
+Espectacular(2):
+\begin{itemize}
+    \item IdEspectacular: E04
+    \item Tipo de Espectacular: Iluminado
+    \item Vía: Secundaria
+    \item Precio: 15,000
+    \item imagen: anuncio01.png
+    \item largo: -2 metros
+    \item ancho: 0 metros
+    \item impacto en persona: -20
+    \item Nombre del contacto: Luis Ramirez
+    \item Teléfono: 26894848
+    \item Dirección arrendador: Mercaderes No. 134
+    \item RFC Arrendador: RARL101412675
+    \item Correo electrónico:ram@live.com.mx
+    \item Dirección: Sagredo No. 489
+    \item Colonia: San Jose Insurgentes
+    \item Delegación - Municipio: Benito Juarez
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+    \item Cargar la pantalla \textbf{IU-GI-AE}
+    \item Ingresa los datos del espectacular 3
+    \item Selecciona la opción de ``Aceptar''.
+\end{itemize}
+\textbf{Salida:}
+Mensaje en pantalla: ``El ancho y alto del espectacular no es válido''. 
+
+\subsubsection{Caso de prueba G02-CP3}
+\textbf{ID:} G02-CP3\\
+\textbf{Nombre:} Caso de uso con especificaciones del espectacular correctos y RFC incorrecto del Arrendador.\\
+\textbf{Entradas:} 
+Espectacular(3):
+\begin{itemize}
+    \item IdEspectacular: E04
+    \item Tipo de Espectacular: Iluminado
+    \item Vía: Secundaria
+    \item Precio: 15,000
+    \item imagen: papel.jpg
+    \item largo: 9 metros
+    \item ancho: 7 metros
+    \item impacto en personas: 100,000
+    \item Nombre del contacto: Luis Ramirez
+    \item Teléfono: 26894848
+    \item Dirección arrendador: Mercaderes No. 134
+    \item RFC Arrendador: ABCDEFGHIJ
+    \item Correo electrónico: ram@live.com.mx
+    \item Dirección: Sagredo No. 489
+    \item Colonia: San Jose Insurgentes
+    \item Delegación - Municipio: Benito Juarez
+\end{itemize} 
+\textbf{Pasos:}
+\begin{itemize}
+\item cargar la pantalla \textbf{IU-GI-AltaEsp}
+    \item Ingresa los datos del espectacular
+    \item selecciona la opción de ``Aceptar''.
+\end{itemize}
+\textbf{Salida:}
+Mensaje: ``RFC incorrecto''.
+
+\subsubsection{Caso de prueba G02-CP4}
+\textbf{ID:} G02-CP4\\
+\textbf{Nombre:} Caso de uso con campo de precio igual a cero.\\
+\textbf{Entradas:} 
+Espectacular(3):
+\begin{itemize}
+    \item IdEspectacular: E04
+    \item Tipo de Espectacular: Iluminado
+    \item Vía: Secundaria
+    \item Precio: 15,000
+    \item imagen: flyer.jpg
+    \item largo: 9 metros
+    \item ancho: 7 metros
+    \item impacto en personas: 100,000
+    \item Nombre del contacto: Luis Ramirez
+    \item Teléfono: 26894848
+    \item Dirección arrendador: Mercaderes No. 134
+    \item RFC Arrendador: ABCDEFGHIJ
+    \item Correo electrónico: ram@live.com.mx
+    \item Dirección: Sagredo No. 489
+    \item Colonia: San Jose Insurgentes
+    \item Delegación - Municipio: Benito Juarez
+\end{itemize} 
+\textbf{Pasos:}
+\begin{itemize}
+\item cargar la pantalla \textbf{IU-GI-AltaEsp}
+    \item Ingresa los datos del espectacular
+    \item selecciona la opción de ``Aceptar''.
+\end{itemize}
+\textbf{Salida:}
+Mensaje: ``El precio no puede ser menor a 1,000''.
+\clearpage
+
+%%%%%%%%%%%%%%% DAR DE BAJA ESPECTACULAR  %%%%%%%%%%%%%%%%%%%
+\subsection{Guión de pruebas GU03}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{| p{5cm}| p{13cm} |} \hline
+\multicolumn{2}{|c|}{\textbf{Datos}} \\ \hline
+\textbf{ID:}&GU03\\ \hline
+\textbf{Autor:}&Nelly Geraldine Robles Rodríguez\\ \hline
+\textbf{Alcance:}&Dar de baja un espectacular \hyperlink{CU:CU03}{CU-03}\\ \hline
+\textbf {Versión:}&0.2 \\ \hline
+\textbf{Preparación:}&Que un espectacular esté previamente dado de alta en sistema.\\ \hline
+\end{tabular}
+\end{table}
+
+- Espectacular 1. Que exista registro de un espectacular. 
+\begin{itemize}
+    \item IdEspectacular: E04
+    \item Tipo de Espectacular: Iluminado
+    \item Vía: Primaria
+    \item Precio: 15,000
+    \item imagen: imagencampania.jpg
+    \item largo: 9 metros
+    \item ancho: 7 metros
+    \item impacto en personas:100,000
+    \textbf{Información del Arrendador}
+    \item Nombre del contacto: Luis Ramírez Rivero
+    \item Teléfono: 26894848
+    \item Dirección arrendador: Mercaderes No. 134
+    \item RFC Arrendador: RARL880519J89
+    \item Correo electrónico:ram@live.com.mx
+    \textbf{Dirección del Espectacular}
+    \item Dirección: Sagredo No. 489
+    \item Colonia: San José Insurgentes
+    \item Delegación - Municipio: Benito Juárez\\
+\end{itemize}
+
+-Espectacular 2.Que exista un registro de un espectacular. 
+\begin{itemize}
+    \item IdEspectacular: E04
+    \item Tipo de Espectacular: Iluminado
+    \item Vía: Primaria
+    \item Precio: 15,000
+    \item imagen: imagen02.jpg
+    \item largo: 9 metros
+    \item ancho: 7 metros
+    \item impacto en personas: 100,000
+    \textbf{Información del Arrendador}
+    \item Nombre del contacto: Luis Ramírez Rivero
+    \item Teléfono: 26894848
+    \item Dirección arrendador: Mercaderes No. 134
+    \item RFC Arrendador: RARL880519J89
+    \item Correo electrónico:ram@live.com.mx
+    \textbf{Dirección del Espectacular}
+    \item Dirección: Sagredo No. 489
+    \item Colonia: San José Insurgentes
+    \item Delegación - Municipio: Benito Juárez
+\end{itemize}
+-Que exista un contrato vigente.
+\begin{itemize}
+    \item  Total: 12,000
+    \item  Fecha de Firma:18/09/2018
+    \item  Inicio del Contrato:16/08/2018
+    \item  Fin del Contrato: 15/03/2020
+    \item  Id Espectacular: E04
+\end{itemize}
+
+\subsubsection{Caso de prueba G03-CP1}
+\textbf{ID:} G03-CP1\\
+\textbf{Nombre:} Caso correcto de baja de un espectacular.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item Delegación: Gustavo A. Madero
+    \item Zona: Norte
+    \item Vía: Secundaria
+    \item Tipo: Dinámico 
+    \item Tamaño: Mediano
+    \item Estado: No disponible
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+    \item Cargar la pantalla \textbf{IU-CE}
+    \item Selecciona al menos uno de los filtros de búsqueda del espectacular 1.
+    \item Selecciona el espectacular del mapa. 
+    \item Da clic en el marcador del espectacular.
+    \item Da clic en el icono eliminar.
+\end{itemize}
+\textbf{Salida:}
+Mensaje \hyperlink{MSG-3B}{MSG-3B}: El espectacular no ha sido dado de baja del sistema.
+
+\subsubsection{Caso de prueba G03-CP2}
+\textbf{ID:} G03-CP2\\
+\textbf{Nombre:} Caso de espectacular con contrato ligado.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item Delegación: Gustavo A. Madero
+    \item Zona: Norte
+    \item Vía: Secundaria
+\end{itemize}
+\textbf{Pasos:}\\
+\begin{itemize}
+    \item Cargar la pantalla \textbf{IU-CE}
+    \item Ingresa los filtros de búsqueda Espectacular 2.
+    \item Selecciona el espectacular del mapa. 
+    \item Da clic en el marcador del espectacular.
+    \item Da clic en el icono eliminar.
+\end{itemize}
+\textbf{Salida:}
+Mensaje: \hyperlink{MSG-3C}{MSG-3C}: El espectacular tiene un contrato, no puede darse de baja.
+\clearpage
+
+
+%%%%%%%    CONSULTAR INFORMACIÓN ESPECTACULAR   %%%%%%%%%
+\subsection{Guión de Pruebas G04}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{| p{5cm}| p{13cm} |} \hline
+\multicolumn{2}{|c|}{\textbf{Datos}} \\ \hline
+    \textbf{ID:}&GU04\\ \hline
+    \textbf{Autor:}&Roa Castellanos Edgar\\ \hline
+    \textbf{Alcance:}&Consulta de espectaculares en el sistema \hyperlink{CU:CU-12}{CU-12}\\ \hline
+    \textbf{Versión:}&0.1\\ \hline
+    \textbf{Preparación:}&Que un espectacular esté previamente dado de alta en sistema.\\ \hline
+    \end{tabular}
+\end{table}
+- Espectacular 1. Que exista registro de un espectacular. 
+\begin{itemize}
+    \item IdEspectacular: E04
+    \item Tipo de Espectacular: Iluminado
+    \item Vía: Primaria
+    \item Precio: 15,000
+    \item imagen: imagen01.jpg
+    \item largo: 9 metros
+    \item ancho: 7 metros
+    \item impacto en personas:100,000
+    \textbf{Información del Arrendador}
+    \item Nombre del contacto: Luis Ramírez Rivero
+    \item Teléfono: 26894848
+    \item Dirección arrendador: Mercaderes No. 134
+    \item RFC Arrendador: RARL880519J89
+    \item Correo electrónico:ram@live.com.mx
+    \textbf{Dirección del Espectacular}
+    \item Dirección: Sagredo No. 489
+    \item Colonia: San José Insurgentes
+    \item Delegación - Municipio: Benito Juárez\\
+\end{itemize}
+
+\subsubsection{Caso de prueba G04-CP1}
+\textbf{ID:} G04-CP1\\
+\textbf{Nombre:} Consulta de información de espectacular con todos los filtros seleccionados.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item Delegación: Gustavo A. Madero
+    \item Zona: Norte
+    \item Vía: Secundaria
+    \item Tipo: Dinámico 
+    \item Tamaño: Mediano
+    \item Estado: No disponible
+\end{itemize}
+\textbf{Pasos:}\\
+\begin{itemize}
+    \item Cargar la pantalla \textbf{IU-CE}
+    \item Ingresa los filtros de búsqueda Espectacular 1.
+    \item Selecciona el espectacular del mapa. 
+    \item Da clic en el marcador del espectacular.
+\end{itemize}
+\textbf{Salida:}
+Muestra en mapa los espectaculares que cumplen con las especificaciones.
+
+\subsubsection{Caso de prueba G04-CP2}
+\textbf{ID:} G04-CP1\\
+\textbf{Nombre:} Consulta de información de espectacular filtrando únicamente por Delegación.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item Delegación: Gustavo A. Madero
+\end{itemize}
+\textbf{Pasos:}\\
+\begin{itemize}
+    \item Cargar la pantalla \textbf{IU-CE}
+    \item Ingresa los filtros de búsqueda Espectacular 1.
+    \item Selecciona el espectacular del mapa. 
+    \item Da clic en el marcador del espectacular.
+\end{itemize}
+\textbf{Salida:}
+Muestra en mapa los espectaculares que se encuentran en la delegación Gustavo A. Madero
+
+\subsubsection{Caso de prueba G04-CP3}
+\textbf{ID:} G04-CP1\\
+\textbf{Nombre:} Consulta de información de espectacular filtrando únicamente por Zona.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item Tipo: Iluminado
+    \item Zona: Oriente
+\end{itemize}
+\textbf{Pasos:}\\
+\begin{itemize}
+    \item Cargar la pantalla \textbf{IU-CE}
+    \item Ingresa los filtros de búsqueda Espectacular 1.
+    \item Selecciona el espectacular del mapa. 
+    \item Da clic en el marcador del espectacular.
+\end{itemize}
+\textbf{Salida:}
+Muestra en mapa los espectaculares que abarcan la Zona Oriente y que son del tipo Iluminado.
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Guión de pruebas GU05}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{| p{5cm}| p{13cm} |} \hline
+\multicolumn{2}{|c|}{\textbf{Datos}} \\ \hline
+\textbf{ID:}&GU05\\ \hline
+\textbf{Autor:}&Roa Castellanos Edgar\\ \hline
+\textbf{Alcance:}&Inicio de sesión \hyperlink{CU:CU00}{CU-00}\\ \hline
+\textbf {Versión:}&0.1 \\ \hline
+\textbf{Preparación:}&El empleado o cliente deberá estar previamente registrado en el sistema.\\ \hline
+\end{tabular}
+\end{table}
+
+- Empleado 1. Está registrado en el sistema. 
+\begin{itemize}
+    \item email: mauro201@amda.mx
+    \item password: \$Holahola
+    %\item idPuesto: 1
+    %\item nombreArea: Agentes de ventas\\
+\end{itemize}
+
+- Empleado 2. No está registrado en el sistema. 
+\begin{itemize}
+    \item email: mauro2011@amda.mx
+    \item password: \$Holahola
+    %\item idPuesto: 1
+    %\item nombreArea: Agentes de ventas\\
+\end{itemize}
+
+- Cliente 1. Está registrado en el sistema.
+\begin{itemize}
+    \item email: Maseca@maseca.com
+    \item password: 2asHb\#
+\end{itemize}
+
+- Cliente 2. No está registrado en el sistema.
+\begin{itemize}
+    \item email: Masecaa@maseca.com
+    \item password: 2asHb\#
+\end{itemize}
+
+\subsubsection{Caso de prueba G05-CP1}
+\textbf{ID:} G05-CP1\\
+\textbf{Nombre:} Empleado registrado en el sistema.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item email: mauro201@amda.mx
+    \item password: \$Holahola\\
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+    \item Da clic en el botón: Iniciar sesión en la pantalla \hyperlink{IU:IU-HOME}{Home} y aparece la pantalla \hyperlink{IU:IU-Login}{IU-Login}
+    \item Ingresa su correo.
+    \item Ingresa su contraseña.
+    \item Da clic en el botón: Iniciar sesión.
+    \item Carga la pantalla acorde a su puesto en la empresa.
+\end{itemize}
+\textbf{Salida:}
+Pantalla de bienvenida de acuerdo al perfil del empleado.
+
+\subsubsection{Caso de prueba G05-CP2}
+\textbf{ID:} G05-CP2\\
+\textbf{Nombre:} Empleado registrado en el sistema.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item email: mauro2011@amda.mx
+    \item password: \$Holahola\\
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+    \item Da clic en el botón: Iniciar sesión en la pantalla \hyperlink{IU:IU-HOME}{Home} y aparece la pantalla \hyperlink{IU:IU-Login}{IU-Login}
+    \item Ingresa su correo.
+    \item Ingresa su contraseña.
+    \item Da clic en el botón: Iniciar sesión.
+    \item Muestra el mensaje MSG-ERROR-0A.
+\end{itemize}
+\textbf{Salida:}
+\hyperlink{MSG-ERROR-0A}{MSG-ERROR-0A}: El correo electrónico no es válido. Favor de verificarlo.
+
+\subsubsection{Caso de prueba G05-CP3}
+\textbf{ID:} G05-CP3\\
+\textbf{Nombre:} Cliente registrado en el sistema.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item email: Maseca@maseca.com
+    \item password: 2asHb\#\\
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+    \item Da clic en el botón: Iniciar sesión en la pantalla \hyperlink{IU:IU-HOME}{Home} y aparece la pantalla \hyperlink{IU:IU-Login}{IU-Login}
+    \item Ingresa su correo.
+    \item Ingresa su contraseña.
+    \item Da clic en el botón: Iniciar sesión.
+    \item Carga la pantalla principal del cliente.
+\end{itemize}
+\textbf{Salida:}
+Pantalla de bienvenida \hyperlink{IU:IU-C-Login}{IU-C-Login}.
+
+\subsubsection{Caso de prueba G05-CP4}
+\textbf{ID:} G05-CP4\\
+\textbf{Nombre:} Cliente no registrado en el sistema.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item email: Masecaa@maseca.com
+    \item password: 2asHb\#\\
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+    \item Da clic en el botón: Iniciar sesión en la pantalla \hyperlink{IU:IU-HOME}{Home} y aparece la pantalla \hyperlink{IU:IU-Login}{IU-Login}
+    \item Ingresa su correo.
+    \item Ingresa su contraseña.
+    \item Da clic en el botón: Iniciar sesión.
+    \item Muestra el mensaje MSG-ERROR-0A.
+\end{itemize}
+\textbf{Salida:}
+\hyperlink{MSG-ERROR-0A}{MSG-ERROR-0A}: El correo electrónico no es válido. Favor de verificarlo.
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Guión de pruebas GU06}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{| p{5cm}| p{13cm} |} \hline
+\multicolumn{2}{|c|}{\textbf{Datos}} \\ \hline
+\textbf{ID:}&GU06\\ \hline
+\textbf{Autor:}&Roa Castellanos Edgar\\ \hline
+\textbf{Alcance:}&Inicio de sesión \hyperlink{CU:CU04}{CU-04}\\ \hline
+\textbf {Versión:}&0.1 \\ \hline
+\textbf{Preparación:}&El espectacular debe estar registrado en el sistema.\\ \hline
+\end{tabular}
+\end{table}
+
+- Espectacular 1. Cambio en el número de impacto a personas del espectacular. 
+\begin{itemize}
+    \item idEspectacular: E04
+    \item largo: 5
+    \item ancho: 10
+    \item impactoEnPersonas: 3000
+    \item idUbicación: 123
+    \item imagen: Espectacular.jpg
+    %\item idPuesto: 1
+    %\item nombreArea: Agentes de ventas\\
+\end{itemize}
+
+- Espectacular 2. Cambio de dirección del espectacular.
+\begin{itemize}
+    \item idEspectacular: E04
+    \item largo: 5
+    \item ancho: 10
+    \item impactoEnPersonas: 3000
+    \item idUbicacion: 124
+    \item imagen: Espectacular.jpg
+\end{itemize}
+
+\subsubsection{Caso de prueba G06-CP1}
+\textbf{ID:} G06-CP1\\
+\textbf{Nombre:} Empleado registrado en el sistema.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item email: mauro201@amda.mx
+    \item password: \$Holahola\\
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+    \item Da clic en el botón: Iniciar sesión en la pantalla \hyperlink{IU:IU-HOME}{Home} y aparece la pantalla \hyperlink{IU:IU-Login}{IU-Login}
+    \item Ingresa su correo.
+    \item Ingresa su contraseña.
+    \item Da clic en el botón: Iniciar sesión.
+    \item Carga la pantalla acorde a su puesto en la empresa.
+\end{itemize}
+\textbf{Salida:}
+Pantalla de bienvenida de acuerdo al perfil del empleado.
+
+\subsubsection{Caso de prueba G06-CP2}
+\textbf{ID:} G06-CP2\\
+\textbf{Nombre:} Empleado registrado en el sistema.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item email: mauro2011@amda.mx
+    \item password: \$Holahola\\
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+    \item Da clic en el botón: Iniciar sesión en la pantalla \hyperlink{IU:IU-HOME}{Home} y aparece la pantalla \hyperlink{IU:IU-Login}{IU-Login}
+    \item Ingresa su correo.
+    \item Ingresa su contraseña.
+    \item Da clic en el botón: Iniciar sesión.
+    \item Muestra el mensaje MSG-ERROR-0A.
+\end{itemize}
+\textbf{Salida:}
+\hyperlink{MSG-ERROR-0A}{MSG-ERROR-0A}: El correo electrónico no es válido. Favor de verificarlo.
+
+
+\clearpage
+
+
+
+
+%%%%%%%%%%%5 ASIGNACION DE TAREAS PIMDE %%%%%%%%%%%%%%%%%%%%
+\subsection{Guión de Pruebas G07}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{| p{5cm}| p{13cm} |} \hline
+\multicolumn{2}{|c|}{\textbf{Datos}} \\ \hline
+    \textbf{ID:}&GU07\\ \hline
+    \textbf{Autor:}&Nelly Geraldine Robles Rodríguez\\ \hline
+    \textbf{Alcance:}&Asignación de Tareas al PIMDE
+    \hyperlink{CU:CU-06}{CU-06}\\ \hline
+    \textbf{Versión:}&0.1\\ \hline
+    \textbf{Preparación:}&Que un espectacular esté previamente dado de alta y exista un registro de servicio  en sistema. \\ \hline
+\end{tabular}
+\end{table}
+
+   -Espectacular 1:
+    \begin{itemize}
+        \item IdEspectacular: E04
+        \item Tipo de Espectacular: Iluminado
+        \item Vía: Secundaria
+        \item Precio: 15,000
+        \item imagen: papel.jpg
+        \item largo: 9 metros
+        \item ancho: 7 metros
+        \item impacto en personas: 100,000
+        \item Nombre del contacto: Luis Ramírez
+        \item Teléfono: 26894848
+        \item Dirección arrendador: Mercaderes No. 134
+        \item RFC Arrendador: ABCDEFGHIJ
+        \item Correo electrónico: ram@live.com.mx
+        \item Dirección: Sagredo No. 489
+        \item Colonia: San José Insurgentes
+        \item Delegación - Municipio: Benito Juárez
+    \end{itemize}  
+    - Que exista una solicitud de servicio registrada.
+    \begin{itemize}
+        \item IdServicio: 2
+        \item IdEspectacular: E04
+        \item IdUbicacion: 1
+        \item Tipo de Servicio: Desinstalación
+        \item Fecha de Inicio: 14/03/2018
+        \item Fecha de Termino: -
+        \item Precio: 10,000
+        \item Estatus: No Realizado
+    \end{itemize}
+
+\subsubsection{Caso de prueba G07-CP1}
+\textbf{ID:} G07-CP1\\
+\textbf{Nombre:} Asignación correcta de PIMDE mediante búsqueda de IdPIMDE.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item IdPIMDE
+    \item Nombre Empleado.
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+    \item Cargar la pantalla IU-GI-APIMDE
+    \item Da clic en el botón de búsqueda del cuadro de texto IdPIMDE.
+    \item Ingresa el IdPIMDE que desea.
+    \item Selecciona el PIMDE de su elección.
+    \item Ingresa la fecha de asignación.
+\end{itemize}
+\textbf{Salida:}
+Muestra id y nombre de PIMDE asignado, fecha de asignación, número de espectacular, tipo de espectacular asignado y tipo de servicio.
+
+\subsubsection{Caso de prueba G07-CP2}
+\textbf{ID:} G07-CP2\\
+\textbf{Nombre:} Asignación correcta de PIMDE mediante búsqueda de Nombre Empleado.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item IdPIMDE
+    \item Nombre Empleado.
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+    \item Cargar la pantalla IU-GI-APIMDE
+    \item Da clic en el botón de búsqueda del cuadro de texto Nombre Empleado.
+    \item Ingresa el Nombre del Empleado que desea.
+    \item Selecciona el PIMDE de su elección.
+    \item Ingresa la fecha de asignación.
+\end{itemize}
+\textbf{Salida:}
+Muestra id y nombre de PIMDE asignado, fecha de asignación, número de espectacular, tipo de espectacular asignado y tipo de servicio.
+\clearpage
+
+\subsubsection{Caso de prueba G07-CP3}
+\textbf{ID:} G07-CP3\\
+\textbf{Nombre:} Fecha de asignación menor a la fecha de alta del servicio.\\
+\textbf{Entradas:} 
+\begin{itemize}
+    \item IdPIMDE
+    \item Nombre Empleado.
+    \item Fecha de asignación.
+\end{itemize}
+\textbf{Pasos:}
+\begin{itemize}
+    \item Cargar la pantalla IU-GI-APIMDE
+    \item Da clic en el botón de búsqueda del cuadro de texto Nombre Empleado.
+    \item Ingresa el Nombre del Empleado que desea.
+    \item Selecciona el PIMDE de su elección.
+    \item Ingresa la fecha de asignación.
+\end{itemize}
+\textbf{Salida:}
+\hyperlink{MSG-ERROR-6B}{MSG-ERROR-6B}: La fecha de asignación no puede ser menor a la fecha de alta de servicio.
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsection{Guión de Pruebas G08}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{| p{5cm}| p{13cm} |} \hline
+\multicolumn{2}{|c|}{\textbf{Datos}} \\ \hline
+    \textbf{ID:}&GU08\\ \hline
+    \textbf{Autor:}&Montiel Guerrero Christian Omar\\ \hline
+    \textbf{Alcance:}&
+    \hyperlink{CU:CU-05}{CU-05}\\ \hline
+    \textbf{Versión:}&0.1\\ \hline
+    \textbf{Preparación:}&Que el espectacular este registrado en el sistema\\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Caso de prueba G08-CP1}
+\textbf{ID:} G08-CP1\\
+\textbf{Nombre:} Caso correcto de consulta de espectaculares\\
+\textbf{Entradas:}
+Espectacular(1). 
+\begin{itemize}
+    \item IdEspectacular: E04
+    \item Vía: Primaria
+    \item largo: 9 metros
+    \item ancho: 7 metros
+    \item Nombre de la zona: Norte
+    \item Delegación: Cuauhtémoc
+    \item cp: 06200
+    \item colonia: Laguinilla Morelos
+    \item calle: Lopez Rayon
+    \item numero Exterior: 69
+\end{itemize}
+
+\textbf{Pasos:}
+\begin{itemize}
+    \item Cargar la pantalla \textbf{IU-03-ConEspec}
+    \item Ingresa los datos de consulta del espectacular
+    \item Selecciona la opción de ``Aceptar''.
+\end{itemize}
+\textbf{Salida:}
+Mensaje en pantalla: ``Operación exitosa''.
+
+
+\subsubsection{Caso de prueba G08-CP2}
+\textbf{ID:} G08-CP2\\
+\textbf{Nombre:} Caso incorrecto de consulta de espectaculares Delegación no ingresada\\
+\textbf{Entradas:}
+Espectacular(2). 
+\begin{itemize}
+    \item IdEspectacular: E04
+    \item Vía: Primaria
+    \item largo: 9 metros
+    \item ancho: 7 metros
+    \item Nombre de la zona: Norte
+    \item Delegación: 
+    \item cp: 06200
+    \item colonia: Laguinilla Morelos
+    \item calle: Lopez Rayon
+    \item numero Exterior: 69
+\end{itemize}
+
+\textbf{Pasos:}
+\begin{itemize}
+    \item Cargar la pantalla \textbf{IU-03-ConEspec}
+    \item Ingresa los datos de consulta del espectacular
+    \item Selecciona la opción de ``Aceptar''.
+\end{itemize}
+\textbf{Salida:}
+Mensaje en pantalla: ``Falta nombre de la delegación, por favor ingresela''.
+
+\subsubsection{Caso de prueba G08-CP3}
+\textbf{ID:} G08-CP3\\
+\textbf{Nombre:} Espectacular no registrado\\
+\textbf{Entradas:}
+Espectacular(2). 
+\begin{itemize}
+    \item IdEspectacular: E05
+    \item Vía: Secundaria
+    \item largo: 12 metros
+    \item ancho: 9 metros
+    \item Nombre de la zona: Sur
+    \item Delegación: Benito Juárez
+    \item cp: 03020
+    \item colonia: Narvarte Poniente
+    \item calle: Av. División del Norte
+    \item numero Exterior: 40
+\end{itemize}
+
+\textbf{Pasos:}
+\begin{itemize}
+    \item Cargar la pantalla \textbf{IU-03-ConEspec}
+    \item Ingresa los datos de consulta del espectacular
+    \item Selecciona la opción de ``Aceptar''.
+\end{itemize}
+\textbf{Salida:}
+Mensaje en pantalla: ``Espectacular no registrado, verifique los datos ingresados''.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsection{Guión de Pruebas G09}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{| p{5cm}| p{13cm} |} \hline
+\multicolumn{2}{|c|}{\textbf{Datos}} \\ \hline
+    \textbf{ID:}&GU09\\ \hline
+    \textbf{Autor:}&De La Rosa Alpizar Angel\\ \hline
+    \textbf{Alcance:}&
+    \hyperlink{CU:CU21}{CU21}\\ \hline
+    \textbf{Versión:}&0.1\\ \hline
+    \textbf{Preparación:}&Tener uno o varios espectaculares registrados en el sistema y que no tengan un ancho de permiso o seguro relacionado\\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Caso de prueba G09-CP1}
+\textbf{ID:} G09-CP1\\
+\textbf{Nombre:} Registro de permiso exitoso\\
+\textbf{Entradas:}
+\begin{itemize}
+    \item Número de permiso:USVC113
+    \item Tipo de permiso: Uso de suelo
+    \item Vía:Primaria 
+	\item IDEspectacular:VCE1 y AZC-E5
+	\item Fecha de inicio de cobertura del seguro: 22FEB2019.
+	\item Fecha de termino de cobertura del seguro: 22FEB2021.
+	\item Archivo que confirme que el permiso o seguro fue tramitado: PERMISO.PDF
+\end{itemize}	
+
+\textbf{Pasos:}
+\begin{itemize}
+    \item Mostrar la pantalla \hyperlink{IU:UI-01-PJPER}{UI-01-PJPER}
+    \item Dar clic en la pestaña seguros.
+    \item Dar clic en nuevo seguro.
+    \item Ingresar el número de permiso perteneciente al archivo.
+    \item Seleccionar un tipo de permiso de la lista desplegable.
+    \item Da clic en el botón selecciona rarchivo.
+    \item Selecciona el archivo referente al permiso
+    \item Da clic en el botón agregar espectaculares
+    \item Se muestra la pantalla  \hyperlink{IU:UI-03-PJAE}{UI-03-PJAE}
+    \item Selecciona la opción Vía primaria
+    \item Marcar las casillas referentes a los espectaculares VCE1 y AZC-E5
+    \item Dar clic en el botón Agregar espectaculares seleccionados.
+    \item Dar clic en el botón Agregar información de permiso.
+    \item Muestra una ventana emergente con el mensaje ``¿Confirma que desea registrar la información de este permiso de espectacular?''
+    \item Dar clic en el botón: Aceptar de la ventana emergente
+\end{itemize}
+\textbf{Salida:}
+Mensaje en pantalla: ``El permiso de espectacular has sido registrado''.
+
+
+\subsubsection{Caso de prueba G09-CP2}
+\textbf{ID:} G09-CP2\\
+\textbf{Nombre:} Caso incorrecto de registro de permiso\\
+\textbf{Entradas:}
+\begin{itemize}
+    \item Número de permiso:PCVC113
+    \item Tipo de permiso: Protección cívil
+    \item Vía:Primaria 
+	\item IDEspectacular:VCE1 y AZC-E5
+	\item Fecha de inicio de cobertura del seguro: 22FEB2019.
+	\item Fecha de termino de cobertura del seguro: 22FEB2021.
+	\item Archivo que confirme que el permiso o seguro fue tramitado: PERMISO.JPEG
+\end{itemize}
+
+\textbf{Pasos:}
+\begin{itemize}
+    \item Mostrar la pantalla \hyperlink{IU:UI-01-PJPER}{UI-01-PJPER}
+    \item Dar clic en la pestaña seguros.
+    \item Dar clic en nuevo seguro.
+    \item Ingresar el número de permiso perteneciente al archivo.
+    \item Seleccionar un tipo de permiso de la lista desplegable.
+    \item Da clic en el botón selecciona archivo.
+    \item Selecciona el archivo referente al permiso
+\end{itemize}
+\textbf{Salida:}
+Mensaje en pantalla: ``El archivo del oficio esta un formato distinto a PDF, ingrese un archivo en formato PDF''.
+
+\subsubsection{Caso de prueba G09-CP3}
+\textbf{ID:} G09-CP3\\
+\textbf{Nombre:} Registro de permiso sin selección de espectaculares\\
+\textbf{Entradas:}
+\begin{itemize}
+    \item Número de permiso:PCVC113
+    \item Tipo de permiso: Protección cívil
+    \item Vía:Primaria 
+	\item Fecha de inicio de cobertura del seguro: 22FEB2019.
+	\item Fecha de termino de cobertura del seguro: 22FEB2021.
+	\item Archivo que confirme que el permiso o seguro fue tramitado: PERMISO.JPEG
+\end{itemize}
+
+\textbf{Pasos:}
+\begin{itemize}
+    \item Mostrar la pantalla \hyperlink{IU:UI-01-PJPER}{UI-01-PJPER}
+    \item Dar clic en la pestaña seguros.
+    \item Dar clic en nuevo seguro.
+    \item Ingresar el número de permiso perteneciente al archivo.
+    \item Seleccionar un tipo de permiso de la lista desplegable.
+    \item Da clic en el botón selecciona archivo.
+    \item Selecciona el archivo referente al permiso
+    \item Da clic en el botón: Agregar espectaculares
+    \item Dar clic en el botón: Agregar información de permiso.
+\end{itemize}
+\textbf{Salida:}
+Mensaje en pantalla: ``Seleccione al menos un espectacular que cubrirá este permiso''.
+
+%\subsection{Pruebas a realizar}
+%\subsubsection{Tipos de prueba}
+%\subsubsection{Estrategias de pruebas}
+%\subsubsection{Retesting}
+%\subsubsection{Pruebas de regresión}
+%\subsubsection{Pruebas de recarga}
+%\subsubsection{Pruebas de estrés}
+%\subsection{Proceso de pruebas}
+%\subsection{Equipo de pruebas}
+%\section{Diseño de pruebas}
+%\subsection{Suit: 1 control de acceso}
+%\begin{itemize}
+%    \item Alcance
+%    \item Versión
+%    \item Propiedades
+%    \item Nivel
+%    \item Tipo
+%    \item Casos de prueba
+%    \begin{enumerate}
+%        \item Pasos
+%        \item Entradas
+%        \item Salidas esperadas
+%    \end{enumerate}
+%    \item Secuenciación
+%    \item Prerrequsitos
+%\end{itemize}
+%\subsection{Suit: 2}
+%\begin{itemize}
+%    \item Alcance
+%    \item Versión
+%    \item Propiedades
+%    \item Nivel
+%    \item Tipo
+%    \item Casos de prueba
+%    \begin{enumerate}
+%        \item Pasos
+%        \item Entradas
+%        \item Salidas esperadas
+%    \end{enumerate}
+%    \item Secuenciación
+%    \item Prerrequsitos
+%\end{itemize}
+%\section{Resultados}
+%\subsection{Funcionalidad}
+%\subsection{Usabilidad}

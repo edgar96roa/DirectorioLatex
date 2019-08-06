@@ -1,0 +1,61 @@
+\section{Análisis del problema}
+
+\subsection{Problema general}
+El problema general de la empresa recae en la desorganización en la información que se ha vuelto inconsistente por falta de actualización constante, impactando directamente a otras áreas que hacen uso de la información referente a los empleados.
+
+\subsection{Problemas específicos}
+La información actualmente se maneja mediante archivos de excel, al no manejar la información de manera eficiente en la que los empleados puedan obtener la información lo más pronto posible, tener la información actualizada y visible para todos, ha generado los siguientes problemas:
+
+\begin{enumerate}
+    \item Desactualización del correo de contacto de los empleados.
+    \item Retardo en tiempos para contactar a los empleados de las distintas Delegaciones y UMAES.
+    \item Desactualización del número telefónico de contacto de los empleados.
+\end{enumerate}
+
+\subsection{Causas}
+Las principales causas se deben a que actualmente no se cuenta con un correcto control en la realización de las siguientes actividades:
+\begin{enumerate}
+    \item Solicitud de cambios de información de los empleados.
+    \item Actualización de información de los empleados.
+\end{enumerate}
+
+\subsection{Consecuencias}
+Como consecuencias dentro de la institución:
+\begin{itemize}
+    \item Envío de información hacia correos equivocados.
+    \item Llamadas a números equivocados.
+\end{itemize}
+
+\subsection{Requerimientos de usuario}
+\newcommand{\RUitem}[5]{\par{#1} & {#2} & {#3}\\ \hline}
+\begin{longtable}{|p{.1\textwidth}|p{.2\textwidth}|p{.6\textwidth}|}
+  \hline 
+  \RUitem{\textbf{ID}}{\textbf{Nombre}}{\textbf{Descripción}} \\ \hline
+  \endfirsthead
+
+  \multicolumn{3}{c}%
+  {{\bfseries \tablename\ \thetable{} Continuación de la página anterior}} \\
+  \hline 
+  \RUitem{\textbf{ID}}{\textbf{Nombre}}{\textbf{Descripción}} \\ \hline
+  \endhead
+
+  \hline \multicolumn{3}{|l|}{{Continúa en la siguiente página}} \\ \hline
+  \endfoot
+  \hline \hline
+  \endlastfoot%
+  %Agregar aquí lo requerimientos de usuario
+    \RUitem{\hypertarget{ReqUsr:RU-1}{RU-1}}{Inicio de sesión}{Todo empleado necesita una herramienta que le permita acceder al sistema.} \\ \hline
+    
+    \RUitem{\hypertarget{ReqUsr:RU-2}{RU-2}}{Cierra de sesión}{Todo empleado necesita una herramienta que le permita salir del sistema.} \\ \hline
+  
+    \RUitem{\hypertarget{ReqUsr:RUADM-1}{RUADM-1}}{Herramienta de alta}{El administrador necesita una herramienta que lo auxilie para agregar la información de los empleados en las distintas UMAES y Delegaciones.} \\ \hline
+
+    \RUitem{\hypertarget{ReqUsr:RUADM-2}{RUADM-2}}{Herramienta de cambios}{El administrador necesita una herramienta que lo auxilie para modificar la información de los empleados en las distintas UMAES y Delegaciones.} \\ \hline 
+
+    \RUitem{\hypertarget{ReqUsr:RUADM-2}{RUADM-2}}{Herramienta de bajas}{El administrador necesita una herramienta que lo auxilie para eliminar la información de los empleados en las distintas UMAES y Delegaciones.} \\ \hline 
+
+    \RUitem{\hypertarget{ReqUsr:RUCS-1}{RUCS-1}}{Herramienta de consulta}{El consultor necesita una herramienta que lo auxilie para conocer la información de los empleados en las distintas UMAES y Delegaciones.} \\ \hline
+
+    \RUitem{\hypertarget{ReqUsr:RUED-1}{RUED-1}}{Herramienta de cambios}{El administrador necesita una herramienta que lo auxilie para modificar la información de los empleados en las distintas UMAES y Delegaciones.} \\ \hline 
+
+\end{longtable}

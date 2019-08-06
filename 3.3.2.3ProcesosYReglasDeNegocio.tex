@@ -1,0 +1,244 @@
+\hypertarget{BR:BR1}{}
+\begin{BussinesRule}{BR1}{Precio de Espectaculares}%%%Redactado por Montiel Guerrero Christian Omar
+    \BRitem[Tipo: ] Habilitadora
+    \BRitem[Clase:] Condicional
+    \BRitem[Nivel:] Influencia de precios
+    \BRitem[Descripción:] El Gerente de Infraestructura determinara los precios de los espectaculares de acuerdo a su tamaño, tipo de espectacular y la vía en la que este localizada.
+    \BRitem[Motivación: ] Un mejor control 
+    a la hora de designar el precio a los espectaculares
+    \BRitem[Ejemplo positivo: ] El Gerente de Infraestructura cuenta con la información del tamaño del espectacular, su tipo y la vía en la que se encuentra.
+    \BRitem[Ejemplo negativo: ] El Gerente de Infraestructura no cuenta con dicha información antes mencionada, por lo que tiene que designar el precio, puede que el precio sea erróneo.
+\end{BussinesRule}
+
+\hypertarget{BR:BR2}{}
+\begin{BussinesRule}{BR2}{Notificación de estado de espectacular}
+%AngelDLR
+    \BRitem[Tipo: ] Regla de inferencia de un hecho.
+    \BRitem[Clase:] Habilitadora
+    \BRitem[Nivel:] Control
+    \BRitem[Descripción:] Se determina el estado de un espectacular seleccionado y con base en eso se notifica al personal de la empresa que necesite conocer el estado de un espectacular.Lo estados pueden ser:
+    \begin{itemize}
+        \item Disponible
+        \item En mantenimiento
+        \item No disponible
+        \item Dado de baja
+        \item En reparación
+        \item Con incidente
+    \end{itemize}
+    \BRitem[Motivación:] Llevar un correcto control del estado en el que se encuentran los espectaculares ayudara a optimizar los tiempos de trabajo de las tareas relacionadas a los estados de los espectaculares. 
+   % \BRitem[Sentencia:] 
+    %\if estado = "Disponible" \bigwedge notificación = "Espectacular disponible"
+    %\if estado = "En mantenimiento" \bigwedge notificación = "Espectacular en mantenimiento"
+    \BRitem[Motivación:] Dar atención rápida a los problemas que se puedan generar por el desconocimiento de los espectaculares.
+    \BRitem[Ejemplo positivo:] {\em Estado de espectacular:}En mantenimiento
+    \BRitem[Ejemplo negativo:] {\em Estado de espectacular:}Desconocido
+\end{BussinesRule}
+
+\hypertarget{BR:BR3}{}
+\begin{BussinesRule}{BR3}{Emisión de un oficio para un permiso legal}
+    \BRitem[Tipo: ] Ejecutivo
+    \BRitem[Clase:] Integridad
+    \BRitem[Nivel:] Pendiente
+    \BRitem[Descripción:] Los permisos legales se solicitan al gobierno mediante un oficio en donde se redacta cuáles espectaculares se solicita utilizar como espacios publicitarios. Un oficio tiene un folio de control expedido por el gobierno.
+    \BRitem[Motivación:] Mantener el control de cuáles espectaculares fueron autorizados para utilizarse con fines publicitarios.
+\end{BussinesRule}
+
+% Regla de negocio basado en https://www.gob.mx/tramites/ficha/permiso-de-instalacion-de-anuncios-publicitarios/SCT949
+% CONAR, http://www.conar.org.mx/que_es_conar
+\hypertarget{BR:BR4}{}
+\begin{BussinesRule}{BR4}{Modificación del estado de un permiso legal}
+    \BRitem[Tipo: ] Habilitadora
+    \BRitem[Clase:] Restricción
+    \BRitem[Nivel:] Control
+    \BRitem[Descripción:] Los permisos legales para hacer uso de los espacios físicos en la vía publica requieren de un permiso emitido por la Secretaría de Comunicaciones y Transportes. Esta dependencia del gobierno es la que determina todas las solicitudes de permisos y los cambios que puedan existir en ellos.
+    
+    \BRitem[Motivación: ] Mantener un negocio funcionando de acuerdo a las leyes y normas que establece el gobierno de las zonas en donde se ubican los espacios publicitarios. Como consecuencia, el gobierno puede determinar el estado del permiso de los espectaculares considerados dentro del negocio como:
+    \begin{itemize}
+        \item Vigente
+        \item En trámite
+        \item Vencido
+    \end{itemize}
+    \BRitem[Ejemplo positivo: ] Estado del permiso de un espectacular: vigente.
+    \BRitem[Ejemplo negativo: ] Estado del permiso de un espectacular: vencido.
+\end{BussinesRule}
+
+\hypertarget{BR:BR5}{}
+\begin{BussinesRule}{BR5}{Periodo de vigencia del permiso legal}
+    \BRitem[Tipo: ] Ejecutiva
+    \BRitem[Clase:] Restricción
+    \BRitem[Nivel:] Control
+    \BRitem[Descripción:] Por políticas de la empresa, los espectaculares con permisos vencidos no pueden considerarse dentro de las posibles soluciones publicitarias. Por lo tanto, un agente de venta no tiene autorización para proponerla a un cliente.
+    
+    \BRitem[Motivación: ] Mantener la satisfacción de los clientes, respetando el acuerdo inicial dentro del contrato evitando contratiempos y acciones que no fueron consideradas para mantener el proyecto publicitario.
+\end{BussinesRule}
+
+\hypertarget{BR:BR6}{}
+\begin{BussinesRule}{BR6}{Acceso a la información de solo los clientes asignados}
+    \BRitem[Tipo: ] Habilitadora
+    \BRitem[Clase:] Autorización
+    \BRitem[Nivel:] Control
+    \BRitem[Descripción:] Un agente de ventas puede ver la información únicamente de los clientes que se le han asignado.
+    \BRitem[Motivación:]Llevar un control sobre que agente de ventas lleva la información de cada uno de los clientes y evitar que alguien haga mal uso de esta.
+    \BRitem[Ejemplo positivo:] Solo el agente de ventas asignado y el gerente de ventas pueden tener acceso a la información de los clientes. 
+    \BRitem[Ejemplo negativo: ] Un agente de ventas no asignado a esos clientes tenga acceso a información que no le corresponde. 
+\end{BussinesRule}
+
+%Regla redactada por Karla 
+\hypertarget{BR:BR7}{}
+\begin{BussinesRule}{BR7}{Incumplimiento de contrato}
+    \BRitem[Tipo: ] Habilitadora
+    \BRitem[Clase:] Condicional
+    \BRitem[Nivel:] Control
+    \BRitem[Descripción:] Si el cliente o la empresa no pueden cumplir con lo definido en el contrato que firmaron por común acuerdo, el que incumpla con dicho documento sera acreedor a una sanción. Se deberá pagar la pena convenida en el contrato.
+    \BRitem[Motivación: ] Saber que hacer en caso de que alguna de las partes involucradas en el contrato(la empresa o el cliente) incumpla con las obligaciones, términos y condiciones que fueron pactadas por común acuerdo.
+    \BRitem[Ejemplo positivo:] La sanción o pena pactada sea pagada, sin ninguna oposición de alguna de las dos partes. 
+    \BRitem[Ejemplo negativo: ] Que alguna de las dos partes no quisiera hacerse responsable y pagar la sanción que le corresponde.
+\end{BussinesRule}
+
+%Regla redactada por Karla 
+\hypertarget{BR:BR8}{}
+\begin{BussinesRule}{BR8}{Atención de ciertos vendedores dependiendo de la dirección del cliente}
+    \BRitem[Tipo: ] Habilitadora
+    \BRitem[Clase:] Restricción
+    \BRitem[Nivel:] Control
+    \BRitem[Descripción:]Dependiendo de la delegación en donde residan los clientes sera el agente de ventas que los atenderá, con esto se quiere dar a entender que los agentes de ventas de la empresa se dividirán en grupos y cada uno de estos atenderá una delegación distinta, por ejemplo, que  los clientes cuyo domicilio se encuentre en la delegación Gustavo A. Madero no podrán ser atendidos por vendedores que atienden a la Delegación Cuauhtémoc o Alvaro Obregón.
+  
+    \BRitem[Motivación: ]Brindar un mejor y mas ágil servicio a los clientes, ya que esto permitirá que tanto el vendedor como el cliente puedan desplazarse mas fácilmente para establecer los términos del contrato y además ayudara a la empresa a tener un mayor control y administración sobre los clientes que se están llevando en cada zona. 
+    \BRitem[Ejemplo positivo:] Los clientes al ser atendidos por vendedores cercanos a la zona en donde residen , tienen una mejor comunicación con ellos.
+    \BRitem[Ejemplo negativo: ] Los vendedores llegan a ser insuficientes o excesivos para determinada zona.
+\end{BussinesRule}
+
+%Regla redactada por Karla
+\hypertarget{BR:BR9}{}
+\begin{BussinesRule}{BR9}{Espectaculares en Funcionamiento}
+    \BRitem[Tipo: ] Habilitadora
+    \BRitem[Clase:] Condicional
+    \BRitem[Nivel:] Control
+    \BRitem[Descripción:]El agente de ventas sólo podrá ofrecer a sus clientes espectaculares en renta que estén funcionando correctamente, es decir, que no tengan ningún fallo o se encuentren en reparación. Si no es así, entonces los agentes de ventas no podrán ofrecerlos. 
+    \BRitem[Motivación:] Brindar un servicio de alta calidad,garantizando a los clientes que sus espectaculares le serán entregados en buenas condiciones.
+    \BRitem[Ejemplo positivo:]Los espectaculares rentados no presentan ninguna falla
+    \BRitem[Ejemplo negativo:] Los espectaculares presentan alguna falla en los primeros días de ser rentados
+\end{BussinesRule}
+
+\hypertarget{BR:BR10}{}
+\begin{BussinesRule}{BR10}{Retraso en el servicio de instalación de publicidad}%%Redactado por Alberto Franco 
+    \BRitem[Tipo: ] Ejecutivo
+    \BRitem[Clase:] Condición 
+    \BRitem[Nivel:] Control
+    \BRitem[Descripción:] El gerente de personal de instalación y mantenimiento asignara nuevo personal para la instalación lo mas pronto posible en el servicio de instalación de un ser vicio de publicidad 
+    \BRitem[Motivación: ] evitar retrasos en los servicios, evitando la perdida de clientes o un servicio insatisfactorio por parte del cliente
+    \BRitem[Ejemplo positivo: ] Los espectaculares de un servicio se instalan correctamente (a tiempo y en forma)
+    \BRitem[Ejemplo negativo: ] Existe un retraso en la instalación de espectaculares de un servicio y a cliente le urge
+\end{BussinesRule}
+
+\hypertarget{BR:BR11}{}
+\begin{BussinesRule}{BR11}{Adición de nuevos espectaculares al contrato}
+%Regla redactada por Edgar Roa
+    \BRitem[Tipo: ] Regla de integridad referencial.
+    \BRitem[Clase:] Cronometrada.
+    \BRitem[Nivel:] Control.
+    \BRitem[Descripción: ] Si el cliente solicita más espectaculares para su compaña publicitaria se creará un nuevo contrato.
+    \BRitem[Motivación: ] Evitar trámites con la Secretaría de Hacienda y Crédito Público.
+    \BRitem[Sentencia: ] $ if(tiempoDeContrato \hspace{0.1cm} \geq \hspace{0.1cm} 30 dias) \Rightarrow generarContrato() $.
+    \BRitem[Ejemplo positivo:]
+    \begin{itemize}
+        \item Se agregó 1 espectacular al contrato.
+        \item Se agregaron 4 espectaculares al contrato.
+        \item Se agregaron 9 espectaculares al contrato.
+    \end{itemize}
+    \BRitem[Ejemplo negativo:]
+    \begin{itemize}
+        \item Se agregaron 0 espectaculares al contrato.
+        \item No se pudo agregar 2 espectaculares al contrato.
+    \end{itemize}
+\end{BussinesRule}
+
+
+\hypertarget{BR:BR12}{}
+\begin{BussinesRule}{BR12}{Eliminación de espectaculares}
+%Regla redactada por Edgar Roa
+    \BRitem[Tipo: ] Regla de integridad referencial.
+    \BRitem[Clase:] Restricción.
+    \BRitem[Nivel:] Control.
+    \BRitem[Descripción: ] Si se requiere eliminar un espectacular se podrá dar de baja o eliminarse definitivamente, siempre y cuando no existan contratos asociados.
+    \BRitem[Motivación: ] Eliminar espectaculares dados de alta de manera accidental o darlos de baja para no mostrarlos disponibles.
+    \BRitem[Sentencia: ] $ if(!existeContrato() \Rightarrow darDeBajaEspectacular() \hspace{0.2cm} || \hspace{0.2cm} eliminarEspectacularDefinitivamente() $.
+\end{BussinesRule}
+%Regla redactada por Edgar Roa
+%Caso de uso
+%\begin{BussinesRule}{BR12}{Notificación de vencimiento de permiso legal}
+%    \BRitem[Tipo: ] Regla de inferencia de un hecho.
+%    \BRitem[Clase:] Cronometrada.
+%    \BRitem[Nivel:] Influencia.
+%    \BRitem[Descripción: ] El cliente recibirá 1 notificación cada 3 días a partir de los últimos 15 días de vencimiento del contrato. El contrato podrá ser renovado con la opción de mantener el contrato con las mismas especificaciones que el anterior o hacer un nuevo contrato.
+%    \BRitem[Motivación: ] Preguntar al cliente si desea renovar el contrato.
+%    \BRitem[Sentencia: ] $ if(existeContrato \hspace{0.1cm} \land \hspace{0.1cm} fechaDeTerminoDeContrato \hspace{0.1cm} \geq \hspace{0.1cm} 15 días \hspace{0.2cm} NotificarVencimientoDeContrato()$.
+%\end{BussinesRule}
+
+\hypertarget{BR:BR13}{}
+\begin{BussinesRule}{BR13}{Notificación de renovación de seguro de espectaculares}
+%Angel DLR
+%Caso de uso
+    \BRitem[Tipo:] Regla de integridad estructural.
+    \BRitem[Clase:] Ejecutiva
+    \BRitem[Nivel:] Control
+    \BRitem[Descripción:] El departamento jurídico recibe una notificación que le permite conocer que seguros de espectaculares están próximos a vencer.
+    \BRitem[Motivación:] Se requiere que los espectaculares estén protegidos ante los diferentes incidentes que puedan ocurrir, y así evitar perdidas monetarias a la empresa.
+    \BRitem[Sentencia:] $ if \hspace{0.2cm} fechaDeVencimientoSeguro <= 20 días \hspace{0.2cm} \Rightarrow  Notificación de Renovación de Seguro $. 
+    \BRitem[Ejemplo positivo:] Quedan 20 días para renovar la póliza de seguro con el número SE-123
+    \BRitem[Ejemplo negativo:] Sin notificación de renovación de póliza de seguro, en los veinte días anteriores a la fecha de vencimiento de la póliza de seguro.
+\end{BussinesRule}
+
+\hypertarget{BR:BR14}{}
+\begin{BussinesRule}{BR14}{Categorización de espectaculares por tamaño}
+%Angel DLR
+     \BRitem[Tipo:] Regla de operación.
+    \BRitem[Clase:] Ejecutiva
+    \BRitem[Nivel:] Control
+    \BRitem[Descripción:] Categorizar el espectacular de acuerdo a su tamaño.
+    \BRitem[Motivación:] Se requiere tener los espectaculares distribuidos en tres categorías de acuerdo a su tamaño, es decir: Grande, Mediano y Chico. 
+    \BRitem[Sentencia:] \hspace{0.2cm}\\
+        $ if  \hspace{0.2cm} medidaEspectacular < 25 m^2 \hspace{0.2cm} \Rightarrow Tamaño = Chico $.\\ 
+        $ if  \hspace{0.2cm} medidaEspectacular > 25 m^2 \bigwedge \hspace{0.2cm} medidaEspectacular < 80 m^2 \hspace{0.2cm} \Rightarrow Tamaño = Mediano $.\\
+        $ if  \hspace{0.2cm} medidaEspectacular > 80 m^2 \hspace{0.2cm} \hspace{0.2cm} \Rightarrow Tamaño = Grande $.\\
+    %\BRitem[Ejemplo positivo:] 
+    %\BRitem[Ejemplo negativo:] 
+\end{BussinesRule}
+
+%\begin{BussinesRule}{BR15}{Notificación de adquisición de nuevo espectacular}%%%Redactado por Alberto Franco
+%    \BRitem[Tipo: ] Pendiente
+%    \BRitem[Clase:] Pendiente
+%    \BRitem[Nivel:] Influencia
+%    \BRitem[Descripción:] El gerente de infraestructura notificara cuando se ha adquirido un nuevo espectacular y ya está listo (contando con todas las especificaciones, como son permiso, haber tenido un mantenimiento preventivo etc) para poder hacer uso de dicho espectacular.
+%    \BRitem[Motivación: ] Un mejor control cuando hay adquisiciones de espectaculares, beneficiando al agente de ventas.
+%    \BRitem[Ejemplo positivo: ] El agente de ventas cuenta con la información actualizada constantemente de cada espectacular nuevo y disponible para usar y lo contempla al momento de ofrecérselo a un cliente
+%    \BRitem[Ejemplo negativo: ] EL agente de ventas no cuenta con dicha información antes mencionada, por lo tanto no tiene una amplia gama de posibilidades de ofrecerle otros espectaculares a un cliente cuando el espectacular que tenia contemplado no esta disponible para poderlo rentar 
+%\end{BussinesRule}
+\hypertarget{BR:BR15}{}
+\begin{BussinesRule}{BR15}{Contratación de Espectacular}%%%Redactado por Montiel Guerrero Christian Omar
+    \BRitem[Tipo: ] Habilitadora
+    \BRitem[Clase:] Condicional
+    \BRitem[Nivel:] Control
+    \BRitem[Descripción:] Cualquiera que requiera acceder al sistema deberá de tener un correo y una contraseña dentro del sistema.
+    \BRitem[Motivación: ] Que ninguna persona ajena a la empresa a excepción de los clientes puedan acceder a la información confidencial.
+\end{BussinesRule}
+
+\hypertarget{BR:BR16}{}
+\begin{BussinesRule}{BR16}{Inicio de sesión}%%%Redactado por Edgar Roa
+    \BRitem[Tipo: ] Habilitadora
+    \BRitem[Clase:] Condicional
+    \BRitem[Nivel:] Influencia
+    \BRitem[Descripción:] Cada espectacular contratado debe contratarse por lo menos por 30 días.
+    \BRitem[Motivación: ] Que el cliente en esos 30 días verifique que nuestro servicio es de calidad.
+\end{BussinesRule}
+
+\hypertarget{BR:BR17}{}
+\begin{BussinesRule}{BR17}{Dimensiones de un espectacular}%%%Redactado por Edgar Roa
+    \BRitem[Tipo: ] Habilitadora
+    \BRitem[Clase:] Condicional
+    \BRitem[Nivel:] Influencia
+    \BRitem[Descripción:] Cada espectacular debe contar con un ancho y alto mínimo de 2 mtrs.
+    \BRitem[Motivación: ] Brindar espacios publicitarios de tamaño accesible y visible al público.
+\end{BussinesRule}
+
+\clearpage

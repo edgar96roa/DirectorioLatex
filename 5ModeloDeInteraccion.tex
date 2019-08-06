@@ -1,0 +1,641 @@
+%=========================================================
+\chapter{Modelo de la interacción}	
+\label{cap:ModeloDeLaInteraccion}
+    En este capítulo se describen gráficamente la estructura de la interfaz gráfica diseñadas para cubrir las necesidades de los usuarios objetivos de acuerdo a los modelos definidos anteriormente.
+\section{Modelo de navegación}
+\clearpage
+\section{Interfaces de Aplicación}
+
+\subsection{Home}
+\hypertarget{IU:IU-HOME}{}
+    Página principal, con barra de menú de servicios proporcionados por la empresa y botón de inicio de sesión.
+Dentro del Home se muestran las opciones
+\begin{itemize}
+    \item Inicio
+    \item ¿Quienes Somos?
+         \\Descripción de la empresa,misión y visión.
+    \item Servicios Adicionales
+         \\Opciones que ofrece la empresa para su publicidad.
+    \item Registrarme para Cotizar
+         \\Registro abierto para los clientes.
+    \item Contactanos
+        \\Datos de la empresa.
+\end{itemize}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=1.0\textwidth]{images/Capitulo3/IU-00.png}
+    \caption{Home de la Página}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+\hypertarget{IU:IU-Login}{}
+\subsection{IU-Login}
+    Pantalla que permite al usuario iniciar sesión dentro del sistema.
+\begin{itemize}
+    \item Correo electrónico.Campo alfanumérico.(Obligatorio)
+    \item Contraseña.Campo alfanumérico que será representado por asteriscos en pantalla.(Obligatorio)
+\end{itemize}
+\begin{figure}[htbp!]
+    \includegraphics[width=1.0\textwidth]{images/Capitulo3/IU-C-Login.jpg}
+    \caption{Inicio de Sesión}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+\hypertarget{IU:IU-CC}{}
+\subsection{IU-CC}
+    Pantalla que permite al usuario hacer el cambio de su contraseña.
+\begin{itemize}
+    \item Contraseña.Campo alfanumérico que será representado por asteriscos en pantalla.(Obligatorio)
+\end{itemize}
+\begin{figure}[htbp!]
+    \includegraphics[width=1.0\textwidth]{images/Capitulo3/IU-01.jpg}
+    \caption{Cambio de Contraseña}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+\hypertarget{IU:IU-RC}{}
+\subsection{IU-RC}
+   Pantalla que permite al cliente la recuperación de su contraseña.
+    \begin{itemize}
+        \item Correo electrónico. 
+    \end{itemize}
+\begin{figure}[htbp!]
+    \includegraphics[width=1.0\textwidth]{images/Capitulo3/IU-08.jpg}
+    \caption{Recuperación de cuenta}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+\hypertarget{IU:IU-GI-Login}{}
+\subsection{IU-GI-Login}
+    Pantalla de acceso del Gerente de Infraestructura.
+\begin{figure}[htbp!]
+    \includegraphics[width=1.0\textwidth]{images/Capitulo3/IU-GI.jpg}
+    \caption{Menú de opciones desde el perfil del Gerente de Infraestructura}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+\hypertarget{IU:IU-REG}{}
+\subsection{IU-REG}
+    Pantalla de registro de cliente para poder obtener usuario y contraseña.
+\begin{itemize}
+    \item Tipo de Persona. Campo en lista desplegable con los valores Física y Moral.(Obligatorio)
+    \item RFC. Campo alfanumérico.(Obligatorio)
+    \item Nombre o Razón Social. Campo alfanumérico.(Obligatorio)
+    \item Apellido Paterno. Campo alfanúmerico.
+    \item Apellido Materno. Campo alfanúmerico.
+    \item Correo electrónico. Campo alfanumérico. (Obligatorio)
+    \item Teléfono. Campo numérico. (Obligatorio)
+    \item Password. Campo alfanúmerico.(Obligatorio)
+    \item Calle. Campo alfanumérico. (Obligatorio)
+    \item Colonia. Campo alfanumérico.(Obligatorio)
+    \item Código Postal.Campo numérico.(Obligatorio)
+    \item Delegación o Municipio. Campo autocompletable en lista despegable. (Obligatorio) 
+    \item Estado. Campo en lista desplegable con los valores:Ciudad de México y Estado de México.(Obligatorio)
+    \item Checkbox de Términos y Condiciones.(Obligatorio)
+    \item Captcha.
+\end{itemize}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/Capitulo3/IU-C-Register.jpg}
+    \caption{Registro del Cliente}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+\hypertarget{IU:IU-GI-AE}{}
+\subsection{IU-GI-AE}
+    Capturar en sistema las características de un nuevo espectacular para su posterior venta.
+    \begin{itemize}
+    \item ID Espectacular. Campo capturado automatico.
+    \item Estado. Campo en lista desplegable con las opciones: Disponible, No disponible, En Mantenimiento, Dado de Baja.
+    \item Tipo de Espectacular. Campo en lista despegable con las opciones Iluminado, Dos Caras, MonoPoste, Tres Caras.
+    \item Vía. Campo en lista despegable con las opciones Primaria, Secundaria y VIP.
+    \item Precio. Campo númerico.
+    \item Imagen. Formato JPG
+    \item Ancho. Campo númerico.
+    \item Alto. Campo númerico.
+    \item Nombre de Contacto. Campo alfanúmerico.
+    \item CURP. Campo alfanúmerico.
+    \item Teléfono. Campo alfanúmerico.
+    \item Dirección Arrendador.Campo alfanúmerico.
+    \item RFC Arrendador.Campo alfanúmerico.
+    \item Correo electrónico.Campo alfanúmerico.
+    \item Dirección. Campo alfanúmerico.
+    \item Colonia.Campo alfanúmerico.
+    \item Delegación - Municipio. Campo en lista despegable con las siguientes opciones.
+    \begin{enumerate}
+        \item Álvaro Obregón.
+        \item Benito Juárez.
+        \item Coyoacán.
+        \item Cuajimalpa.
+        \item Cuauhtémoc.
+        \item Gustavo A. Madero.
+        \item Iztacalco.
+        \item Magdalena Contreras.
+        \item Iztapalapa
+    \end{enumerate}
+    \end{itemize}
+\begin{figure}[htbp!]
+    \includegraphics[width=0.9\textwidth]{images/Capitulo3/IU-GI-RegEsp.jpg}
+    \caption{ Alta un Espectacular}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+\subsection{IU-GI-CE}
+    Consulta de Espectaculares
+\begin{itemize}
+    \item Muestra los espectaculares dados de alta en sistema mediante un mapa de google maps.
+    \item Delegación.Campo en lista desplegable con las opciones
+    \begin{enumerate}
+        \item Álvaro Obregón.
+        \item Benito Juárez.
+        \item Coyoacán.
+        \item Cuajimalpa.
+        \item Cuauhtémoc.
+        \item Gustavo A. Madero.
+        \item Iztacalco.
+        \item Magdalena Contreras.
+        \item Iztapalapa
+    \end{enumerate}
+    \item Zona. Campo en lista despegable con las opciones Norte, Sur, Centro, Poniente y Oriente.
+    \item Vía. Campo en lista despegable con las opciones Primaria, Secundaria y VIP.
+    \item Tipo.Campo en lista despegable con las opciones Simple, Doble, Triple,Digital y Dinámico.
+    \item Tamaño. Campo en lista despegable con opciones Chico, Mediano y Grande.
+    \item Estado. Campo en lista despegable con las opciones Disponible, No Disponible,En mantenimiento y Dado de Baja.
+    
+\end{itemize}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/Capitulo3/IU-GI-CE.jpg}
+    \caption{Pantalla para consulta de espectaculares}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+\subsection{IU-GI-NPIMDE}
+    Gerente de Infraestructura  recibe una notificación de una nueva solicitud de servicio, el Gerente de Infraestructura selecciona la notificación que desea asignar.
+    \begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=1.0\textwidth]{images/Capitulo3/IU-6.jpg}
+    \caption{Notificación Gerente de Infraestructura}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+\subsection{IU-GI-APIMDE}
+    Asignación de tareas a PIMDE.
+    Detalles del servicio solicitado en columna de lado izquierdo, con las características del espectacular, del lado derecho filtros de búsqueda por:
+    \begin{itemize}
+        \item ID PIMDE
+        \item Nombre del empleado
+    \end{itemize}
+     Ingreso de la Fecha de asignación de tarea.
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Capitulo3/IU-7.jpg}
+    \caption{Asignación de PIMDE a un nuevo  servicio.}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+\subsection{IU-AV-Cot}
+    Pantalla de Cotización de Espectaculares.
+    \begin{itemize}
+    \item Tipo de Campaña. Campo en lista desplegable.
+    \item Tipo de Espectacular. Campo en lista desplegable.
+    \item Vía.Campo en lista desplegable con las opciones Vía Primaria, Secundaria y VIP. 
+    \item Zona Campo en lista desplegable
+    \item Delegación. Campo en lista desplegable.
+    \item Ancho
+    \item Alto
+    \item Precio
+    \end{itemize}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Capitulo3/IU-AV-Cot.jpg}
+    \caption{Cotización de Espectaculares}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+%\hypertarget{IU:IU-AV-Login}{}
+%\subsection{IU-AV-Login}
+ %   La siguiente pantalla corresponde al inicio de sesión del agente de ventas.
+    
+%\begin{figure}[htbp!]
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{images/Capitulo3/IU-AV-Login.png}
+%    \caption{Login Agente de Ventas}
+%    \label{fig:my_label}
+%\end{figure}
+%\clearpage
+
+\hypertarget{IU:IU-AV-ConCli}{}
+\subsection{IU-AV-ConCli}
+    La siguiente pantalla es para visualizar la información del o los clientes que el agente de ventas necesite. Para ello cuenta con un buscador en el cuál puede ingresar el nombre del cliente y seleccionar en la parte izquierda de la lista desplegable ``Ver'' las clientes en grupos de 10 en 10 hasta 50 o todos los clientes con un nombre similar.
+    
+    Entre los campos que presenta para visualizar la información del cliente se encuentran:
+    \begin{itemize}
+        \item Nombre
+        \item Apellido Paterno
+        \item Apellido Materno
+        \item Calle
+        \item Delegación
+        \item Cp
+        \item Colonia
+        \item Tipo de cliente
+        \item Teléfono
+        \item Email
+    \end{itemize}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Capitulo3/IU-AV-ConCli.png}
+    \caption{Consultar clientes}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+\hypertarget{IU:IU-AV-ConEmp}{}
+\subsection{IU-AV-ConEmp}
+    La siguiente pantalla es para visualizar la información de una o varias empresas que el agente de ventas necesite. Para ello cuenta con un buscador en el cuál puede ingresar el nombre de la empresa y seleccionar en la parte izquierda de la lista desplegable ``Ver'' las empresas en grupos de 10 en 10 hasta 50 o todos los clientes con un nombre similar.
+    
+    Entre los campos que presenta para visualizar la información de las empresas se encuentran:
+    \begin{itemize}
+        \item Nombre o Razón social
+        \item Tipo de cliente
+        \item Teléfono
+        \item Email
+    \end{itemize}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Capitulo3/IU-AV-ConEmp.png}
+    \caption{Consultar empresas}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+\hypertarget{IU:IU-PIMDE-RG}{}
+\subsection {IU:IU-PIMDE-RG}
+Pantalla para capturar los servicios realizados por el PIMDE.
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Capitulo3/IU-15.jpg}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+
+
+%\hypertarget{IU-05-CambCon}{}
+%\subsection{IU-05-CambCon}
+%\begin{figure}[htbp!]
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{images/Capitulo3/IU-14.png}
+%    \caption{Cambio de contraseña}
+%\end{figure}
+%\clearpage%%
+
+%%
+
+
+%\subsection{IU-14}
+%\begin{figure}[htbp!]
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{images/Capitulo3/IU-14.png}
+%    \caption{Registro Cliente}
+%    \label{fig:my_label}
+%\end{figure}
+%\clearpage
+
+
+
+
+%\subsection{UI-04-Form}
+%    Pantalla de registro de Alta de Espectacular
+%\begin{figure}[htbp!]
+%\centering
+%    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-02/2.png}
+%    \caption{Formulario para Alta de Espectacular}
+%    \label{fig:my_label}
+%\end{figure}
+%\subsection{UI-04-DatRegi}
+%    Pantalla salida de Alta de Espectacular
+%\begin{figure}[htbp!]
+%\centering
+%    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-02/3.png}
+%    \caption{Formulario de salida de Alta de Espectacular}
+%    \label{fig:my_label}
+%\end{figure}
+%\clearpage
+
+
+
+
+
+\subsection{UI-01-PIMDE}
+    Pantalla de inicio del usuario con el rol PIMDE
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-08/1.png}
+    \caption{Pantalla principal del PIMDE}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+\subsection{UI-02-PIMDEred}
+    Pantalla de registro de trabajos realizados por parte del PIMDE
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-08/2.png}
+    \caption{Pantalla de registro de trabajos}
+    \label{fig:my_label}
+\end{figure}
+
+
+
+\clearpage
+
+
+\subsection{UI-03-PIMDEDatReg}
+    Pantalla de registro exitoso del trabajo realizado por parte del PIMDE
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-08/3.png}
+    \caption{registro exitoso}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+%\subsection{UI-BS2LoginER}
+%    Pantalla de inicio de sesión con un mensaje de error de que la contraseña es incorrecta de acuerdo al usuario
+%\begin{figure}[htbp!]
+%\centering
+%    \includegraphics[width=0.94\textwidth]{ima%ges/Capitulo3/IU-11.jpg}
+%    \caption{pantalla con error de contraseña}
+%    \label{fig:my_label}
+%\end{figure}
+%\clearpage
+
+
+
+%\subsection{UI-01-RecCon}
+%    Pantalla de recuperación de contraseña del usuario, aquí se tiene que introducir el correo electrónico para que le sea proporcionada su contraseña.
+%\begin{figure}[htbp!]
+%\centering
+%    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-10/2.png}
+%    \caption{Pantalla de recuperación de contraseña}
+%    \label{fig:my_label}
+%\end{figure}
+%\clearpage
+
+
+
+\subsection{UI-02-CONSCOTI}
+Pantalla de consulta de cotización de espectaculares, aquí el cliente podrá hacer una previa consulta de los espectaculares que necesite, con los datos que introduzca, podrá después ver el rango de precio que el pagara por esa renta
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-20/DI-11.png}
+    \caption{Formulario de cotización de espectaculares}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+\subsection{UI-03-msg}
+En esta pantalla el cliente ya con su inicio de sesión previo y con el formulario lleno podrá saber la dirección de los espectaculares que solicito en el formulario así como también un rango de precio que el pagara antes de terminar el contrato.
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-20/DI-12.png}
+    \caption{Pantalla con la salida previa del precio que pagara el cliente}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+\hypertarget{IU:IU-C-Login}{}
+\subsection{IU-C-Login}
+Pantalla de inicio del usuario con el rol Cliente
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-21/DI-13.png}
+    \caption{Pantalla principal del Cliente}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+\subsection{UI-02-CLICONS}
+En esta pantalla el cliente podrá hacer la consulta de espectaculares que tiene a su nombre, antes de meter algún filtro le aparecerán todos los espectaculares que están a su nombre.
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-21/DI-14.png}
+    \caption{Consulta de espectaculares general}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+\subsection{UI-02-CLICONS-1}
+En está pantalla el cliente podrá hacer una consulta mas especifica de algún espectacular, insertando datos en los filtros de búsqueda.
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-21/DI-15.png}
+    \caption{Consulta de espectaculares especifico}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+\subsection{UI-01-CLI}
+Pantalla de inicio del usuario con el rol Cliente
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-23/DI-16.png}
+    \caption{Pantalla principal del Cliente}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+\subsection{UI-02-CLIcap}
+En esta pantalla ya con el id del espectacular que se le envía al cliente por correo electrónico por el cual no se tiene un pago reciente, el cliente lo inserta en el campo para poder efectuar el pago del espectacular.
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-23/DI-17.png}
+    \caption{Pago de espectacular}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+\subsection{UI-02-CLIcap2}
+En esta pantalla al cliente se le notifica por medio de un mensaje que el pago fue cargado de manera exitosa.
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-23/DI-18.png}
+    \caption{Pago exitoso}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+
+\subsection{UI-01-AgeServ}
+Pantalla de inicio del usuario con el rol Agente de Ventas
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-25/DI-19.png}
+    \caption{Pantalla principal del Agente de Ventas}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+\subsection{UI-02-REGISINCI}
+Pantalla para registrar las incidencias que se han sucitado con los espectaculares, aquí el Agente de Ventas llena todos los campos para hacer un registro exitoso del incente.
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-25/DI-19-0.png}
+    \caption{Pantalla de registro de incidencias}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+
+
+\subsection{UI-03-RegiExit}
+En esta pantalla el registro del incidente fue exitoso por lo cual este registro se manda al historial de incidentes que se han suscitado con ese espectacular
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-25/DI-20.png}
+    \caption{Registro exitoso de incidente}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+
+
+
+\subsection{UI-01-PCH}
+Pantalla de inicio del usuario con el rol Personal de Capital Humano.
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-30/DI-21.png}
+    \caption{Pantalla principal del Personal de Capital Humano}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+
+\subsection{UI-02-FormAlt}
+En esta pantalla el Personal de Capital Humano puede dar de alta el nuevo personal que llega a la empresa, solo que tiene que tener todos los datos que se piden en la pantalla para que no haya errores al dar de alta el nuevo personal.
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-30/DI-22.png}
+    \caption{Formulario de Alta de Personal}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+\subsection{UI-03-RegExit}
+En esta pantalla el Personal de Capital Humano ya haciendo un registro previo, se muestra el registro ya realizado en el sistema y reflejado en la base de datos.
+\begin{figure}[htbp!]
+\centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-30/DI-23.png}
+    \caption{}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+
+
+
+
+
+
+
+
+
+
+
+\subsection{UI-01-PJPER}
+\hypertarget{UI:UI-01-PJPER}{}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-28/UI_Perfil_perjur.png}
+    \caption{Perfil de usuario personal jurídico.}
+    \label{fig:UI-01-PERPJ}
+\end{figure}
+\textbf{Descripción:} Perfil de usuario del personal jurídico. Permite a los usuarios con el cargo de personal jurídico registrar los seguros adquiridos así como los diferentes permisos que los espectaculares requieren para poder ser usados en los servicios de publicidad ofrecidos por la empresa.
+\clearpage
+
+\subsection{UI-02-PJNSEG}
+\hypertarget{UI:UI-02-PJNSEG}{}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-28/UI_NSeguro.png}
+    \caption{Pantalla de registro de seguros de espectaculares.}
+    \label{fig:UI-02-Nseg}
+\end{figure}
+\textbf{Descripción:} Esta interfaz de usuario permite al personal jurídico ingresar los datos principales que el sistema requiere para para poder notificar sobre renovación de seguros de espectaculares.
+\clearpage
+
+\subsection{UI-03-PJAE}
+\hypertarget{UI:UI-03-PJAE}{}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-28/UI_AgrEsp.png}
+    \caption{Ventana para agregar espectaculares}
+    \label{fig:my_label}
+\end{figure}
+\textbf{Descripción:} Esta interfaz de usuario permite al personal jurídico agregar los espectaculares que cubrirá el seguro o permiso que sera registrado.
+\clearpage
+
+\subsection{UI-04-PJNPER}
+\hypertarget{UI:UI-04-PJNPER}{UI-04-PJNPER}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-28/UI_NPer.png}
+    \caption{Pantalla de registro de permisos de espectaculares.}
+    \label{fig:my_label}
+\end{figure}
+Esta interfaz de usuario permite al personal jurídico ingresar los datos principales que el sistema requiere para para poder notificar sobre renovación de permisos de espectaculares.
+\clearpage
+
+\subsection{UI-01-GICONES}
+\hypertarget{UI:UI-01-GICONES}{UI-01-GICONES}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.94\textwidth]{Capitulo4/C-U-05/ConEsp.png}
+    \caption{Pantalla de consulta de espectaculares para gerente de infraestructura.}
+    \label{fig:my_label}
+\end{figure}
+Esta interfaz permite al gerente de infraestructura visualizar los espectaculares registrados en el sistema, los selectores permiten filtrar los diferentes espectaculares registrados en la base de datos.
+\clearpage

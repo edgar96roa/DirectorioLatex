@@ -1,0 +1,84 @@
+%=========================================================
+\chapter{Modelo dinámico}
+\label{cap:ModeloDinamico}
+
+Este capítulo describe en modelo dinámico del sistema. en el se detallan todos los escenarios de ejecución del sistema asi como el comportamiento que tendra el sistema a lo largo de tiempo se uso.
+%---------------------------------------------------------
+%\section{Maquina de estados}
+
+%---------------------------------------------------------
+\clearpage
+\section{Modelo de Maquinas de Estado}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Capitulo4/edo_especta.jpg}
+    \caption{Diagrama de estados del estatus de espectacular}
+    \label{fig:my_label}
+\end{figure}
+\textbf{ins-estru:} el estatus del espectacular pasa a \textbf{Disponible} cuando se hace la instalación exitosa de la estructura del espectacular.
+\\
+\textbf{inic[contrato]:} Cuando el PIMDE hace la instalación de la lona espectacular, el estatus pasa a \textbf{No disponible} cuando hay un contrato. 
+\\
+\textbf{fin[Contrato]:} cuando se acaba el contrato de la renta de la estructura del espectacular, el estatus pasa a \textbf{Disponible}.
+\\
+\textbf{fecha-progra:} el estatus del espectacular pasa a \textbf{En mantenimiento} cuando la fecha programada para su mantenimiento esta próxima.
+\\
+\textbf{reg-positivo:} El estatus del espectacular pasa a \textbf{No disponible} o \textbf{Disponible} cuando hay un registro positivo del mantenimiento del mismo.
+\\
+\textbf{reg-negativo:} cuando hay un registro negativo del mantenimiento del espectacular se queda ahí mismo.
+\textbf{inst-defe} Al momento de hacer un mantenimiento del espectacular y el PIMDE se percata que la estructura no soporta otro mantenimiento ya sea correctivo o preventivo, notifica al Gerente de Infraestructura para que cambie el estatus a \textbf{Baja}
+\textbf{term[Contrato]:} Cuando se termina el contrato de renta de espacio con el arrendatario cambia el estatus del espectacular a \textbf{Baja}
+\clearpage
+
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Capitulo4/edo_servicio.jpg}
+    \caption{Diagrama de estados del estatus del servicio}
+    \label{fig:my_label}
+\end{figure}
+\textbf{ini-esta:} 
+el estatus del servicio que se realiza en la estructura del espectacular por defecto se encuentra en \textbf{No realizado}.
+\\
+\textbf{asig-serv:}
+el estatus de la estructura del espectacular pasa a \textbf{En proceso}, cuando el Gerente de Infraestructura asigna al PIMDE un servicio y este se encuentra en el lugar en donde se tiene que realizar el servicio.
+\\
+\textbf{si\_Realizado:}
+el estatus de la estructura del espectacular pasa a \textbf{Realizado}, cuando el PIMDE realizó un servicio exitoso sobre la estructura del espectacular.
+\\
+\textbf{no\_Realizado:}
+el estatus de la estructura del espectacular pasa a \textbf{No realizado}, cuando el PIMDE no pudo realizar un servicio exitoso sobre la estructura del espectacular.
+\clearpage
+
+\section{Modelo de Casos de Uso}
+
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[angle=90, width=0.80\textwidth]{Capitulo4/ModeloGeneralCU.jpg}
+    \caption{Diagrama General de Casos de uso}
+    \label{fig:my_label}
+\end{figure}
+
+% CASOS DE USO
+\input{cu/CU00}
+\input{cu/CU01}
+\input{cu/CU02}
+\input{cu/CU03}
+\input{cu/CU04}
+\input{cu/CU05}
+\input{cu/CU06}
+\input{cu/CU07}
+%\input{cu/CU08}
+%\input{cu/CU09}
+%\input{cu/CU10}
+\input{cu/CU11}
+\input{cu/CU12}
+\input{cu/CU13}
+\input{cu/CU14}
+\input{cu/CU15}
+\input{cu/CU16}
+%\input{cu/CU17}
+%\input{cu/CU18}
+%\input{cu/CU19}
+%\input{cu/CU20}
+\input{cu/CU21}
+\input{cu/CU22}

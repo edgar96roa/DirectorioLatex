@@ -1,0 +1,425 @@
+%=========================================================
+\chapter{Diseño de Información}
+\label{cap:DiseniodeInformacion}
+\section{Modelo Relacional}
+hace referencia a:
+\hyperlink{cap:infoydats}{Información y datos}
+\section{Diccionario de Datos}
+hace referencia a:
+\hyperlink{cap:metadatos}{Especificación de atributos}
+\section{Modelo de Acceso a datos}
+En esta sección se describen como serán las consultas que se usaran en los diagramas de secuencia, con la etiqueta especificada de la siguiente manera \textbf{DS-M: SQL Query
+\#N}
+\subsection{DS-M: SQL Query \#1}
+Esta es la consulta que nos permite obtener la información de los usuario que quieran ingresar al sistema, se presentan dos consultas una para los trabajadores de la empresa y otra para los clientes.    
+\begin{verbatim}
+CREATE OR REPLACE VIEW loginUsers AS
+    SELECT e.email, e.password, p.nombrePuesto
+    FROM Empleado e, puesto p
+    where p.idPuesto=e.idPuesto
+    UNION
+    SELECT email, password, "Cliente"
+    FROM Cliente;
+    
+SELECT password into pswd
+FROM loginUsers
+WHERE email = 'email';
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#2}
+Esta es la consulta que nos permite cambiar la contraseña de algun usuario que quiera ingresar a nuestro sistema.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE cambiocontraseña(IN emaill VARCHAR(45),IN passwordd VARCHAR(45))
+BEGIN
+SELECT email, password
+FROM Cliente
+WHERE password LIKE CONCAT (passwordd,"%");
+	
+UPDATE Cliente SET password=passwordd
+WHERE email=emaill;
+	
+SELECT email, password
+FROM Cliente
+WHERE password LIKE CONCAT (passwordd,"%");
+END #
+\c 
+DELIMITER ;
+CALL cambiocontraseña("email","password");
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#3}
+Esta consulta nos permite dar de alta un nuevo espectacular en el sistema para después realizar una renta sobre el mismo, siempre y cuando el id del espectacular no se halla registrado con anterioridad.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE altaespectacular(IN id INT, IN anc DOUBLE, IN lar DOUBLE, IN impaper INT, INT idfoto INT
+
+, IN imagennn BLOB, IN idtipespe INT, IN descr VARCHAR(45), IN viiaa VARCHAR(45), IN ilumi VARCHAR(2)
+
+, IN idubi INT, IN edo VARCHAR(45), IN delega VARCHAR(60), IN cpp NUMBER(5), IN colo VARCHAR(45)
+
+, IN calleee VARCHAR(45), IN numext VARCHAR(10), IN idz INT)
+BEGIN
+INSERT INTO Espectacular VALUES (id,anc,lar,impaper,"","",idtipespe,idubi,"","");
+INSERT INTO Galeria VALUES (id,idfoto);
+INSERT INTO Fotografia VALUES (idfoto,imagennn);
+INSERT INTO TipoEspectacular VALUES (idtipespe,descr,"",ilumi,viiaa);
+INSERT INTO UbicacionEspectacular VALUES (idubi,"","",edo,delega,cpp,colo,calleee,numext,idz);
+	
+END #
+\c 
+DELIMITER ;
+CALL altaespectacular("id", "anc", "lar", "impaper", "idfoto", "imagennn", "idtipespe", "descr", "viiaa",
+
+"ilumi" , "idubi", "edo", "delega", "cpp", "colo", "calleee", "numext", "idz");
+\end{verbatim}
+   
+   
+\subsection{DS-M: SQL Query \#4}
+En esta consulta nos permite hacer una selección de especifica acerca de un espectacular, la cual nos trae como atributos lo que se especifican a continuación en la query.
+\begin{verbatim}
+SELECT e.idEspectacular, et.descripcionDeEstado, te.descripcion, te.via, te.descripcion, ue.ancho,
+
+ue.largo, ue.calle, ue.numeroExterior, ue.colonia, ue.cp, ue.delegacion, e.tamaño, e.precio
+FROM estado et, espectacular e, TipoEspectacular te, UbicacionEspectacular ue
+WHERE et.idestado=e.idestado
+AND e.idTipoEspectacular=te.idTipoEspectacular
+AND e.idUbicacion=ue.idUbicacion
+AND e.idEspectacular="E04";
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#5}
+En esta consulta nos permite hacer una selección de todos los espectaculares que tiene asociado un cliente, la cual nos trae como atributos lo que se especifican a continuación en la query.
+\begin{verbatim}
+SELECT e.idEspectacular, et.descripcionDeEstado, te.descripcion, te.via, te.descripcion, ue.ancho,
+
+ue.largo, ue.calle, ue.numeroExterior, ue.colonia, ue.cp, ue.delegacion, e.tamaño, e.precio
+FROM estado et, espectacular e, TipoEspectacular te, UbicacionEspectacular ue
+WHERE et.idestado=e.idestado
+AND e.idTipoEspectacular=te.idTipoEspectacular
+AND e.idUbicacion=ue.idUbicacion
+\end{verbatim}
+
+\subsection{DS-M: SQL Query \#6}
+En esta consulta nos permite dar la alta de un nuevo cliente a nuestro sistema para que el pueda hacer uso del mismo.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE altacliente(in idclie int, in idmora int, in idfisi, in rfcc varchar(13),
+
+in namefisi varchar(60), in namemora varchar(60), in apmat varchar(60), in appat varchar(60),
+
+in emaill varchar(45), in numeroTel varchar(45), in pass varchar(45), in calleeo varchar(60),
+
+in delegac varchar(60), in cppp varchar(5), in colon varchar(45))
+BEGIN
+INSERT INTO TelefonoClienteFisico VALUES(idfisi,numeroTel,"");
+INSERT INTO TelefonoClienteMoral VALUES(idmora,numeroTel,"","");
+INSERT INTO ClientePersonaFisica VALUES(idfisi,namefisi,apmat,appat,idclie,rfcc);
+INSERT INTO ClientePersonaMoral VALUES(idmora,namemora,"",idclie,rfcc);
+INSERT INTO Cliente VALUES(idclie,"",emaill,pass,calleeo,delegac,cppp,colon,"",rfcc);
+END #
+DELIMITER ;
+CALL altacliente(idclie,idmora,idfisi,rfcc,namefisi,namemora,apmat,appat,emaill,numeroTel,pass,calleeo,
+
+delegac,cppp,colon);
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#7}
+En esta consulta nos permite hacer una selección de los clientes que están registrados en el sistema, esta selección es de manera especifica, es decir nos trae un solo cliente.
+
+Los atributos que nos trae esta consulta se muestran a continuación.
+\begin{verbatim}
+SELECT c.*, cpf.*, cpm.idClientePersonaMoral, cpm.razonSocial, cpm.idCliente, cpm.RFC, tcf.*,tcm.*
+FROM TelefonoClienteFisico tcf, TelefonoClienteMoral tcm, ClientePersonaFisica cpf,
+
+ClientePersonaMoral cpm, Cliente c
+WHERE ((c.idCliente=cpf.idCliente AND cpf.idClientePersonaFisica=tcf.idClientePersonaFisica 
+
+AND c.usuario="user") OR 
+	  (c.idCliente=cpm.idCliente AND cpm.idClientePersonaMoral=tcm.idClienteMoral 
+	  
+	  AND c.usuario="user"));
+\end{verbatim}
+
+
+
+\subsection{DS-M: SQL Query \#8}
+En esta consulta nos permite hacer una selección de todos los clientes que están registrados en el sistema, esta selección es de manera general, es decir nos trae a todos lo clientes que están en el sistema.
+
+Los atributos que nos trae esta consulta se muestran a continuación.
+\begin{verbatim}
+SELECT c.*, cpf.*, cpm.idClientePersonaMoral, cpm.razonSocial, cpm.idCliente, cpm.RFC, tcf.*,tcm.*
+FROM TelefonoClienteFisico tcf, TelefonoClienteMoral tcm, ClientePersonaFisica cpf,
+
+ClientePersonaMoral cpm, Cliente c
+WHERE ((c.idCliente=cpf.idCliente AND cpf.idClientePersonaFisica=tcf.idClientePersonaFisica) OR 
+	  (c.idCliente=cpm.idCliente AND cpm.idClientePersonaMoral=tcm.idClienteMoral);
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#9}
+En esta consulta nos permite hacer una proyección para la cotización de espectaculares de manera general, es decir no va a arrojar todos los espectaculares que cumplan con el criterio de búsqueda.
+Los atributos que no arroja esta consulta se muestran a continuación.
+\begin{verbatim}
+SELECT c.idCliente, e.ImpactoEnPersonas, tc.tipoCampaña, te.via, e.alto, e.ancho, z.nombreZona,
+
+ue.Delegacion, e.precio, te.descripcion
+FROM Cliente c, Contrato co, DetalleDeContrato ddc, Espectacular e, TipoCampaña tc, TipoEspectacular, 
+
+UbicacionEspectacular ue, Zona z
+WHERE c.idCliente=co.idCliente
+AND co.idTipoCampaña=tc.idTipoCampaña
+AND co.idContrato=ddc.idContrato
+AND ddc.idEspectacular=e.idEspectacular
+AND e.idTipoEspectacular=te.idTipoEspectacular
+AND e.idUbicacion=ue.idUbicacion
+AND ue.idZona=z.idZona
+AND e.ImpactoEnPersonas=100000;
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#10}
+En esta consulta nos permite recuperar la contraseña de algún cliente o usuario que desee recuperar la misma. El campo que tendrá que introducir el cliente o usuario seria su email para que le sea devuelta la contraseña.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE reccontraseña(in emaill varchar(45))
+BEGIN
+select email, password
+from cliente
+where email like concat(emaill,"%");
+END #
+\c 
+DELIMITER ;
+CALL reccontraseña("christian30394@gmail.com");
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#11}
+En esta consulta nos permite hacer la selección de los trabajos que ha realizado un pimde a los espectaculares, esto es de manera general, es decir nos va a seleccionar todos los trabajos que ha realizado.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE trabajos(in numemp int)
+BEGIN
+select e.nombre, s.tipoDeServicio, es.idEspectacular
+from empleado e, realiza r, servicio s, espectacular es
+where e.numeroEmpleado=r.numeroEmpleado
+and r.idservicio=s.idservicio
+and s.idEspectacular=es.idEspectacular
+and numeroEmpleado like concat(numemp,"%");
+END #
+\c 
+DELIMITER ;
+CALL trabajos(2);
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#12}
+En esta consulta nos permite hacer la selección de los montos que el cliente tiene que pagar por el espectacular que esta rentando.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE pagos(in idespe int)
+BEGIN
+select e.idEspectacular, pdp.monto
+from espectacular e, DetalleDeContrato ddc, Contrato c, ContratoTienePlanDePagos ctpdp, PlanDePagos pdp
+where e.idEspectacular=ddc.idEspectacular
+and ddc.idContrato=c.idContrato
+and c.idContrato=ctpdp.idContrato
+and ctpdp.idPlanDePagos=pdp.idPlanDePagos
+and e.idEspectacular  like concat (idespe,"%");
+END #
+\c 
+DELIMITER ;
+CALL pagos(15);
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#13}
+En esta consulta nos permite cargar un incidente que se halla suscitado con algún espectacular. Para poderle dar seguimiento al incidente. 
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE incidentes(in idespe int, in idinci int,in clasi varchar(45),in descri varchar(200),
+
+in feper DATE, in fehab DATE)
+BEGIN
+INSERT INTO Espectacular VALUES (idespe,"","","","","","","","","");
+INSERT INTO Incidente VALUES (idinci,clasi,descri,feper,fehab,idespe);
+END #
+\c 
+DELIMITER ;
+CALL incidentes(idespe,idinci,clasi,descri,feper,fehab);
+
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#14}
+En esta consulta nos permite ver todos los incidentes que ha tenido un espectacular en particular solo introduciendo el id del espectacular.
+al hacer la consulta nos trae el id del espectacular y todos los detalles del incidente.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE selincidentes(in idespe int)
+BEGIN
+select e.idEspectacular, i.*
+from espectacular e, incidente i
+where e.idEspectacular=i.idEspectacular
+and e.idEspectacular like concat (idespe"%"):
+END #
+\c 
+DELIMITER ;
+CALL selincidentes(15);
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#15}
+En esta consulta no permite dar de alta a un empleado nuevo en la empresa para que pueda hacer uso del sistema facilitándole su tarea.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE altaempleados(in numemp int,in nomar varchar(30),in name varchar(45), 
+
+in appat varchar(45), in apmat varchar(45), in emaill varchar(45), in tel varchar(15), in idar int)
+BEGIN
+INSERT INTO Empleado VALUES (numemp,name,appat,apmat,emaill,tel,"",idar,"","");
+INSERT INTO Area VALUES (idar,nomar);
+END #
+\c 
+DELIMITER ;
+CALL altaempleados(numemp,nomar,name,appat,apmat,emaill,tel,idar);
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#16}
+En esta consulta nos permite seleccionar a todos los empleados que están en la empresa y al área  la que pertenecen, con todos su datos.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE empleadostotal(in numemp int)
+BEGIN
+select e.*, a.*
+from empleado e, area a
+where e.idarea=a.idarea
+and e.numemp like concat (numemp,"%");
+END #
+\c 
+DELIMITER ;
+CALL empleadostotal(18);
+\end{verbatim}
+
+
+\subsection{DS-M: SQL Query \#17}
+En esta consulta nos permite dar de baja un espectacular del sistema para que ya no se pueda rentar después, la baja se da por varios casos explicados en el CU-03.
+El dato necesario para dar de baja un espectacular sera por su id.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE eliminarespectacular(in idespe int)
+BEGIN
+DELETE 
+FROM Espectacular 
+WHERE idEspectacular=idespe;
+END #
+\c 
+DELIMITER ;
+CALL eliminarespectacular(18);
+\end{verbatim}
+\clearpage
+\subsection{DS-M: SQL Query \#18}
+Esta consulta nos permite hacer la modificación de algún espectacular ya sea en los campos del estado en el que se encuentra y el numero de personas a las que impactara.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE modificarespectacular(in idespe int,in desesta varchar(50), in impa int);
+BEGIN
+select e.idEspectacular, es.descripcionDeEstado, e.ImpactoEnPersonas 
+from espectacular e, estado es
+where e.idestado=es.idestado
+and e.idEspectacular like concat (idespe,"%");
+ 
+update espectacular e, estado es set es.descripcionDeEstado=desesta, e.ImpactoEnPersonas=impa
+where e.idestado=es.idestado
+and e.idEspectacular=idespe;
+
+select e.idEspectacular, es.descripcionDeEstado, e.ImpactoEnPersonas 
+from espectacular e, estado es
+where e.idestado=es.idestado
+and e.idEspectacular like concat (idespe,"%");
+END #
+\c 
+DELIMITER ;
+CALL modificarespectacular(idespe,desesta,impa);
+\end{verbatim}
+
+\subsection{DS-M: SQL Query \#19}
+En esta consulta nos permite eliminar del sistema a un cliente que ya no usa nuestros servicios.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE eliminarcliente(in ideclie int)
+BEGIN
+DELETE 
+FROM Cliente
+WHERE idCliente=ideclie;
+END #
+\c 
+DELIMITER ;
+CALL eliminarcliente(18);
+\end{verbatim}
+\clearpage
+\subsection{DS-M: SQL Query \#20}
+En esta consulta nos permite hacer la modificación de la información de los clientes,la cual no es toda, únicamente es el domicilio del cliente, con todos sus parámetros.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE modificarcliente(in idclie int, in calleee varchar(60), in delegac varchar(60),
+
+in cpp varchar(5), in colo varchar(45))
+BEGIN
+select *
+from cliente
+where idCliente like concat (idclie,"%");
+ 
+update cliente set callee=calle, delegac=delegacion, cpp=cp, colo=colonia
+where idCliente=idclie
+
+select *
+from cliente
+where idCliente like concat (idclie,"%");
+END #
+\c 
+DELIMITER ;
+CALL modificarcliente(idclie,calleee,delegac,cpp,colo);
+\end{verbatim}
+
+\subsection{DS-M: SQL Query \#21}
+En esta consulta nos permite eliminar del sistema a un empleado que ya no este laborando en la empresa para que ya no haga uso de su usuario para alterar de forma deliberada los registros del sistema.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE eliminarempleado(in numemple int)
+BEGIN
+DELETE 
+FROM Espectacular 
+WHERE numeroEmpleado=numemple;
+END #
+\c 
+DELIMITER ;
+CALL eliminarempleado(18);
+\end{verbatim}
+\clearpage
+\subsection{DS-M: SQL Query \#22}
+En esta consulta nos permite hacer la modificación de la información de los empleados,la cual no es toda, únicamente es el teléfono y si esta activo o no en la empresa.
+\begin{verbatim}
+DELIMITER #
+CREATE PROCEDURE modificarempleado(in numemp int, in tel varchar(15),in act TINYINT)
+BEGIN
+select *
+from empleado
+where numeroEmpleado like concat (numemp,"%");
+ 
+update empleado set numeroEmpleado=numemp, numeroTelefonico=tel, activo=act
+where numeroEmpleado=numemp;
+
+select *
+from empleado
+where numeroEmpleado like concat (numemp,"%");
+END #
+\c 
+DELIMITER ;
+CALL modificarempleado(numemp,tel,act);
+\end{verbatim}

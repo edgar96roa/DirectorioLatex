@@ -1,0 +1,50 @@
+\documentclass[10pt,oneside,onecolumn,openany]{book}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{cdtBook}
+\usepackage{usecases}
+\usepackage{txfonts}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{nameref}
+\usepackage{caption}
+\usepackage{placeins}
+\usepackage[T1]{fontenc}
+\usepackage{multirow}
+\usepackage{lscape}
+
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%\includepdf{Portada} Inlcuir portada
+\frontmatter
+\tableofcontents
+\listoffigures
+\listoftables
+\mainmatter
+\LRCornerWallPaper{1}{images/Etiquetas/bssnvo}
+
+\input{capitulo/1/1introduccion}
+\input{capitulo/2/2Glosario}
+\input{capitulo/3/3Propuesta}
+%\input{3.3.2.2InteraccionConElUsuario}
+%\input{3.3.2.3ProcesosYReglasDeNegocio}
+%\input{3.3.2.4InformacionYDatos}
+%\input{3.3.2.5PropiedadesDelSoftware}
+%\input{3.4procesos}
+%\input{4ModeloDinamico}
+%\input{5ModeloDeInteraccion}
+%\input{6ModeloEstatico}
+%\input{7Disenhodeinformacion}
+%\input{8CasosPrueba}
+%\input{9ModeloDynamic.tex}
+\end{document}

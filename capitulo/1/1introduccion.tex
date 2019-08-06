@@ -1,0 +1,139 @@
+%=========================================================
+\chapter{Introducción}
+\label{cap:Introducción}
+Este documento contiene las especificaciones del proyecto Directorio que corresponde al trabajo realizado durante 2019, para (INDICAR) redactado por parte del equipo de TI de la \textbf{División de Innovación Educativa}.
+%---------------------------------------------------------
+
+\section{Presentación}
+El crecimiento de las empresas y negocios tiene como consecuencia primordial el aumento de información, mientras la organización crezca la información también aumenta, sería más difícil mantenerla, manejarla y controlarla. Por lo que surge la necesidad de manejar estos grandes volúmenes de datos de un forma más fácil y automatizada con aplicaciones informáticas que nos faciliten dichas labores.
+\\\\
+El presente documento detalla la solución propuesta para la Gestión de la información que maneja el ``IMSS" que en este caso será de las \hyperlink{Glo:Delegaciones}{Delegaciones} y \hyperlink{Glo:UMAE}{UMAES}.
+\\\\
+Se propone una gestión mejorada mediante un sistema web que automatice las operaciones que se requieran para la gestión de espectaculares.
+\\\\
+Este documento tiene distintos propósitos, los cuales incluyen:
+\begin{itemize}
+    \item Mostrar los distintos tipos de requerimientos del sistema que se van a desarrollar a lo largo del semestre.
+    \item Mostrar los avances y características que se vayan agregando al sistema para una mejor comprensión de la información de los directorios, describiendo los puntos de vista y acciones que se llevaran a cabo en la construcción de dicho sistema.
+    \item El presente documento se usará como medio de aprobación o rechazo del sistema que se está realizando.
+\end{itemize}
+
+\section{Organización del contenido}
+En el capítulo \ref{cap:Introducción} es la parte dónde se define el contexto actual del manejo del directorio de los empleados en el IMSS. En este apartado se incluye una introducción, la organización del contenido, así como la organización de los requerimientos de usuario, requerimientos funcionales, reglas de negocio, procedimientos, casos de uso e interfaces de usuario. \\
+
+En el capítulo \ref{cap:Glosario} es la parte dónde se define el conjunto de términos que estaremos utilizando a lo largo de todo el documento, el organigrama del IMSS, además de la definición de los usuarios que utilizarán el sistema, así como sus responsabilidades, perfil del empleado y procesos en los que participa. \\
+
+En el capítulo \ref{cap:Propuesta} es la parte del análisis del problema y el contexto al que nos estamos enfrentando. En este apartado se definen los requisitos de usuario, lo cuales nos permiten conocer cuales son las necesidades de éste, de igual manera se define la propuesta de solución, los objetivos generales y específicos, descripción de la solución a realizar. \\
+
+En el capítulo \ref{cap:ModeloDinamico} es la parte que nos dará un mejor contexto de como se formará el sistema después de haber hecho el análisis, aquí pretendemos dar a conocer por medio del uso de los casos de uso cual será el comportamiento del sistema.
+
+En el capítulo \ref{cap:ModeloDeLaInteraccion} se dará la descripción de las pantallas que conformaran el sistema. Cada pantalla contiene un objetivo, el diseño que contiene, las salidas que vamos a observar en dicha pantalla, así como las entradas que contendrá cada una de ellas. \\
+
+En el capítulo \ref{cap:ModeloEstatico} se dará la descripción de en que lenguaje de programación, se programara el sistema, las características del servidor en cuando a hardware y software para poder correr el sistema y también como estará compuestos los objetos en el diagrama de clases sus atributos, métodos, relaciones, etc. \\
+
+En el capítulo \ref{cap:DiseniodeInformacion} se dará la descripción de como estará conformada la estructura de la base de datos, como estarán conformados los metadatos en la base de datos y como están conformadas las consultas en el sistema para hacer la selección especifica de los datos que se necesitan en su momento\\
+
+En el capítulo \ref{cap:CasosDePrueba} se dará la descripción de como las estarán estructuradas las pruebas que se harán en el sistema así como en comportamiento que se tiene contemplado que hará el sistema al momento de realizar una prueba especifica. \\
+
+\section{Notación, símbolos y convenciones utilizadas}
+\setlength{\parindent}{0cm}
+Los requerimientos del usuario utilizan una clave XX-RUX, donde:
+    
+\begin{description}
+    \item[RU] Es la clave para todos los {\bf R}equerimientos del {\bf U}suario.
+    \item[X] Es un número consecutivo: 1, 2, 3, ...
+    \item[xx]  Son las abreviaciones de los actores que usaran el sistema.
+\end{description}
+
+ Los requerimientos funcionales utilizan una clave RFX, donde:
+    
+\begin{description}
+    \item[RF] Es la clave para todos los {\bf R}equerimientos {\bf F}uncionales
+    \item[X] Es un número consecutivo: 1, 2, 3, ...
+\end{description}
+
+ Los requerimientos no funcionales utilizan una clave RNFX, donde:
+    
+\begin{description}
+    \item[RNF] Es la clave para todos los {\bf R}equerimientos {\bf N}o {\bf F}uncionales
+    \item[X] Es un número consecutivo: 1, 2, 3, ...
+\end{description}
+
+Las reglas del negocio utilizan una clave BRX, donde:
+    
+\begin{description}
+    \item[BR] Es la clave para todas las {\bf b}usiness {\bf R}ule o Regla de Negocio
+    \item[X] Es un número consecutivo: 1, 2, 3, ...
+\end{description}
+
+Para los campos obligatorios a insertar se usara la clave al final del campo *, donde:
+    
+\begin{description}
+    \item[*] Es la clave para los campos obligatorios.
+\end{description}
+
+Las interfaces de usuario utilizan una clave UI-XX-título, donde:
+    
+\begin{description}
+    \item[UI] Es la clave para todas las {\bf U}ser {\bf I}nterface.
+    \item[XX] Es un número consecutivo: 01, 02, 03, ...
+    \item[título] Es nombre que tendrá la pantalla.
+\end{description}
+
+Las historias de usuario utilizan una clave HU-XX-título, donde:
+    
+\begin{description}
+    \item[HU] Es la clave para todas las {\bf H}istorias de {\bf U}suario.
+    \item[XX] Es un número consecutivo: 01, 02, 03, ...
+    \item[título] Es nombre que tendrá la Historia de Usuario.
+\end{description}
+
+Los procesos utilizan una clave PROC-XX, donde:
+    
+\begin{description}
+    \item[PROC] es la clave para todos los {\bf PROC}esos del Negocio
+    \item[XX] Es un número consecutivo: 01, 02, 03, ...
+\end{description}
+
+Para los mensajes que arroja el sistema se usa la clave MSG-XX *, donde:
+    
+\begin{description}
+    \item[MSG] es la clave para todos los {\bf M}e{\bf N}sajes que arroja el sistema
+    \item[XX] Es un número consecutivo: 01, 02, 03, ...
+\end{description}
+\clearpage
+Además, para los requerimientos funcionales se usan las abreviaciones que se muestran en la tabla~\ref{tbl:TbPrioridades}.
+
+\begin{table}[hbtp!]
+	\begin{center}
+    \begin{tabular}{|r l|}
+	    \hline
+    	{\footnotesize Id} & {\footnotesize\em Identificador del requerimiento.}\\
+    	{\footnotesize Pri.} & {\footnotesize\em Prioridad}\\
+    	{\footnotesize Ref.} & {\footnotesize\em Referencia a los Requerimientos de usuario.}\\
+    	{\footnotesize MA} & {\footnotesize\em Prioridad Muy Alta.}\\
+    	{\footnotesize A} & {\footnotesize\em Prioridad Alta.}\\
+    	{\footnotesize M} & {\footnotesize\em Prioridad Media.}\\
+    	{\footnotesize B} & {\footnotesize\em Prioridad Baja.}\\
+    	{\footnotesize MB} & {\footnotesize\em Prioridad Muy Baja.}\\
+		\hline
+    \end{tabular} 
+    \caption{Prioridades.}
+    \label{tbl:TbPrioridades}
+	\end{center}
+\end{table}
+Además, para los actores del sistema se usan las abreviaciones que se muestran en la tabla~\ref{tbl:Roles}.
+
+\begin{table}[hbtp!]
+	\begin{center}
+    \begin{tabular}{|r l|}
+	    \hline
+    	{\footnotesize ADM.} & {\footnotesize\em Administrador.}\\
+    	{\footnotesize CS.} & {\footnotesize\em Consultor.}\\
+    	{\footnotesize ED.} & {\footnotesize\em Editor.}\\
+    	\hline
+    \end{tabular} 
+    \caption{Roles.}
+    \label{tbl:TbRoles}
+	\end{center}
+\end{table}
